@@ -43,6 +43,7 @@ const emptyState = (): PlanState => ({
 type Action =
   | { type: 'HYDRATE'; state: PlanState }
   | { type: 'ADD_EXERCISE'; day: DayKey; entry: ExerciseEntry }
+  | { type: 'ADD_EXERCISES'; day: DayKey; entries: ExerciseEntry[] }
   | { type: 'REMOVE_EXERCISE'; day: DayKey; index: number }
   | { type: 'UPDATE_ENTRY'; day: DayKey; index: number; patch: Partial<ExerciseEntry> }
   | { type: 'CLEAR_DAY'; day: DayKey }
@@ -59,6 +60,16 @@ const reducer = (state: PlanState, action: Action): PlanState => {
         days: {
           ...state.days,
           [action.day]: [...state.days[action.day], action.entry],
+        },
+        restDays: { ...state.restDays, [action.day]: false },
+      };
+    case 'ADD_EXERCISES':
+      if (action.entries.length === 0) return state;
+      return {
+        ...state,
+        days: {
+          ...state.days,
+          [action.day]: [...state.days[action.day], ...action.entries],
         },
         restDays: { ...state.restDays, [action.day]: false },
       };
@@ -103,12 +114,15 @@ const reducer = (state: PlanState, action: Action): PlanState => {
 type PlanContextValue = {
   plan: WeeklyPlan;
   restDays: RestDays;
+  state: PlanState;
   addExercise: (day: DayKey, entry: ExerciseEntry) => void;
+  addExercises: (day: DayKey, entries: ExerciseEntry[]) => void;
   removeExercise: (day: DayKey, index: number) => void;
   updateEntry: (day: DayKey, index: number, patch: Partial<ExerciseEntry>) => void;
   clearDay: (day: DayKey) => void;
   clearAll: () => void;
   toggleRest: (day: DayKey) => void;
+  hydrate: (state: PlanState) => void;
 };
 
 const PlanContext = createContext<PlanContextValue | null>(null);
@@ -160,13 +174,17 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   const value: PlanContextValue = {
     plan: state.days,
     restDays: state.restDays,
+    state,
     addExercise: (day, entry) => dispatch({ type: 'ADD_EXERCISE', day, entry }),
+    addExercises: (day, entries) =>
+      dispatch({ type: 'ADD_EXERCISES', day, entries }),
     removeExercise: (day, index) => dispatch({ type: 'REMOVE_EXERCISE', day, index }),
     updateEntry: (day, index, patch) =>
       dispatch({ type: 'UPDATE_ENTRY', day, index, patch }),
     clearDay: (day) => dispatch({ type: 'CLEAR_DAY', day }),
     clearAll: () => dispatch({ type: 'CLEAR_ALL' }),
     toggleRest: (day) => dispatch({ type: 'TOGGLE_REST', day }),
+    hydrate: (next) => dispatch({ type: 'HYDRATE', state: next }),
   };
 
   return <PlanContext.Provider value={value}>{children}</PlanContext.Provider>;

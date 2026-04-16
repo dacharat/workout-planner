@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn add:*)",
+      "Bash(yarn build:*)",
+      "Bash(yarn remove:*)",
+      "Bash(node -e ':*)",
+      "Bash(node -e \"const {exercises}=require\\('./data/exercises.ts'\\)\")"
+    ]
+  }
+}

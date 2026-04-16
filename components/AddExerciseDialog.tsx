@@ -7,6 +7,7 @@ import type { DayKey } from '@/lib/constants';
 import { DAY_LABELS } from '@/lib/constants';
 import { FilterBar } from './FilterBar';
 import { ExerciseLibraryList } from './ExerciseLibraryList';
+import { CopyFromDayPanel } from './CopyFromDayPanel';
 
 type Props = {
   day: DayKey;
@@ -14,20 +15,39 @@ type Props = {
   onClose: () => void;
 };
 
+type Tab = 'library' | 'copy';
+
 const equipmentOptions = Array.from(
   new Set(exercises.flatMap((e) => e.equipment)),
 ).sort();
 
-const muscleOptions = Array.from(
-  new Set(exercises.flatMap((e) => e.muscles)),
-).sort();
-
 export function AddExerciseDialog({ day, open, onClose }: Props) {
   const { plan, addExercise } = usePlan();
-  const [selectedEquipment, setSelectedEquipment] = useState<string | null>(null);
-  const [selectedMovement, setSelectedMovement] = useState<Movement | null>(null);
-  const [selectedMuscle, setSelectedMuscle] = useState<string | null>(null);
+  const [tab, setTab] = useState<Tab>('library');
+  const [selectedEquipment, setSelectedEquipment] = useState<string[]>([]);
+  const [selectedMovement, setSelectedMovement] = useState<Movement[]>([]);
+  const [selectedMuscle, setSelectedMuscle] = useState<string[]>([]);
   const [query, setQuery] = useState('');
+
+  // Reset tab when reopened
+  useEffect(() => {
+    if (open) setTab('library');
+  }, [open]);
+
+  const muscleOptions = useMemo(() => {
+    const source =
+      selectedMovement.length > 0
+        ? exercises.filter((e) => selectedMovement.includes(e.movement))
+        : exercises;
+    return Array.from(new Set(source.flatMap((e) => e.muscles))).sort();
+  }, [selectedMovement]);
+
+  useEffect(() => {
+    if (selectedMuscle.length === 0) return;
+    const valid = new Set(muscleOptions);
+    const next = selectedMuscle.filter((m) => valid.has(m));
+    if (next.length !== selectedMuscle.length) setSelectedMuscle(next);
+  }, [muscleOptions, selectedMuscle]);
 
   const selectedIds = useMemo(
     () => new Set(plan[day].map((e) => e.id)),
@@ -46,9 +66,21 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return exercises.filter((e) => {
-      if (selectedEquipment && !e.equipment.includes(selectedEquipment)) return false;
-      if (selectedMovement && e.movement !== selectedMovement) return false;
-      if (selectedMuscle && !e.muscles.includes(selectedMuscle)) return false;
+      if (
+        selectedEquipment.length > 0 &&
+        !selectedEquipment.some((eq) => e.equipment.includes(eq))
+      )
+        return false;
+      if (
+        selectedMovement.length > 0 &&
+        !selectedMovement.includes(e.movement)
+      )
+        return false;
+      if (
+        selectedMuscle.length > 0 &&
+        !selectedMuscle.some((m) => e.muscles.includes(m))
+      )
+        return false;
       if (q && !e.name.toLowerCase().includes(q)) return false;
       return true;
     });
@@ -60,6 +92,13 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
     addExercise(day, { id: exercise.id, sets: 3, reps: 10 });
     onClose();
   };
+
+  const tabClass = (active: boolean) =>
+    `inline-flex h-8 items-center rounded-md px-3 text-xs font-medium transition ${
+      active
+        ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
+        : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800'
+    }`;
 
   return (
     <div
@@ -100,29 +139,59 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
             </svg>
           </button>
         </div>
+        <div
+          role="tablist"
+          aria-label="Add exercise source"
+          className="flex gap-1 border-b border-neutral-200 bg-neutral-50/50 px-5 py-2 dark:border-neutral-800 dark:bg-neutral-900/50"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'library'}
+            className={tabClass(tab === 'library')}
+            onClick={() => setTab('library')}
+          >
+            Library
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'copy'}
+            className={tabClass(tab === 'copy')}
+            onClick={() => setTab('copy')}
+          >
+            Copy from day
+          </button>
+        </div>
         <div className="space-y-4 overflow-y-auto px-5 py-4">
-          <input
-            type="search"
-            placeholder="Search exercises..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="h-10 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:ring-neutral-300"
-          />
-          <FilterBar
-            equipmentOptions={equipmentOptions}
-            muscleOptions={muscleOptions}
-            selectedEquipment={selectedEquipment}
-            selectedMovement={selectedMovement}
-            selectedMuscle={selectedMuscle}
-            onEquipmentChange={setSelectedEquipment}
-            onMovementChange={setSelectedMovement}
-            onMuscleChange={setSelectedMuscle}
-          />
-          <ExerciseLibraryList
-            items={filtered}
-            selectedIds={selectedIds}
-            onSelect={handleSelect}
-          />
+          {tab === 'library' ? (
+            <>
+              <input
+                type="search"
+                placeholder="Search exercises..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="h-10 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:ring-neutral-300"
+              />
+              <FilterBar
+                equipmentOptions={equipmentOptions}
+                muscleOptions={muscleOptions}
+                selectedEquipment={selectedEquipment}
+                selectedMovement={selectedMovement}
+                selectedMuscle={selectedMuscle}
+                onEquipmentChange={setSelectedEquipment}
+                onMovementChange={setSelectedMovement}
+                onMuscleChange={setSelectedMuscle}
+              />
+              <ExerciseLibraryList
+                items={filtered}
+                selectedIds={selectedIds}
+                onSelect={handleSelect}
+              />
+            </>
+          ) : (
+            <CopyFromDayPanel targetDay={day} onDone={onClose} />
+          )}
         </div>
       </div>
     </div>

@@ -7,12 +7,12 @@ import { formatMuscleLabel } from '@/lib/volume';
 type Props = {
   equipmentOptions: string[];
   muscleOptions: string[];
-  selectedEquipment: string | null;
-  selectedMovement: Movement | null;
-  selectedMuscle: string | null;
-  onEquipmentChange: (value: string | null) => void;
-  onMovementChange: (value: Movement | null) => void;
-  onMuscleChange: (value: string | null) => void;
+  selectedEquipment: string[];
+  selectedMovement: Movement[];
+  selectedMuscle: string[];
+  onEquipmentChange: (value: string[]) => void;
+  onMovementChange: (value: Movement[]) => void;
+  onMuscleChange: (value: string[]) => void;
 };
 
 const chipBase =
@@ -23,7 +23,14 @@ const chipActive =
   'border-neutral-900 bg-neutral-900 text-white dark:border-white dark:bg-white dark:text-neutral-900';
 
 const sectionLabel =
-  'mb-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400';
+  'mb-1.5 flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400';
+
+const clearBtn =
+  'text-[10px] font-medium normal-case tracking-normal text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200';
+
+function toggle<T>(arr: T[], value: T): T[] {
+  return arr.includes(value) ? arr.filter((v) => v !== value) : [...arr, value];
+}
 
 export function FilterBar({
   equipmentOptions,
@@ -38,69 +45,81 @@ export function FilterBar({
   return (
     <div className="space-y-3">
       <div>
-        <div className={sectionLabel}>Movement</div>
-        <div className="flex flex-wrap gap-1.5">
-          <button
-            type="button"
-            className={`${chipBase} ${selectedMovement === null ? chipActive : chipInactive}`}
-            onClick={() => onMovementChange(null)}
-          >
-            All
-          </button>
-          {MOVEMENTS.map((m) => (
-            <button
-              key={m}
-              type="button"
-              className={`${chipBase} ${selectedMovement === m ? chipActive : chipInactive}`}
-              onClick={() => onMovementChange(m)}
-            >
-              {m}
+        <div className={sectionLabel}>
+          <span>Movement</span>
+          {selectedMovement.length > 0 && (
+            <button type="button" className={clearBtn} onClick={() => onMovementChange([])}>
+              Clear
             </button>
-          ))}
+          )}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {MOVEMENTS.map((m) => {
+            const active = selectedMovement.includes(m);
+            return (
+              <button
+                key={m}
+                type="button"
+                className={`${chipBase} ${active ? chipActive : chipInactive}`}
+                onClick={() => onMovementChange(toggle(selectedMovement, m))}
+                aria-pressed={active}
+              >
+                {m.replace('_', ' ')}
+              </button>
+            );
+          })}
         </div>
       </div>
       <div>
-        <div className={sectionLabel}>Muscle</div>
-        <div className="flex flex-wrap gap-1.5">
-          <button
-            type="button"
-            className={`${chipBase} ${selectedMuscle === null ? chipActive : chipInactive}`}
-            onClick={() => onMuscleChange(null)}
-          >
-            All
-          </button>
-          {muscleOptions.map((m) => (
-            <button
-              key={m}
-              type="button"
-              className={`${chipBase} ${selectedMuscle === m ? chipActive : chipInactive}`}
-              onClick={() => onMuscleChange(m)}
-            >
-              {formatMuscleLabel(m)}
+        <div className={sectionLabel}>
+          <span>Muscle</span>
+          {selectedMuscle.length > 0 && (
+            <button type="button" className={clearBtn} onClick={() => onMuscleChange([])}>
+              Clear
             </button>
-          ))}
+          )}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {muscleOptions.map((m) => {
+            const active = selectedMuscle.includes(m);
+            return (
+              <button
+                key={m}
+                type="button"
+                className={`${chipBase} ${active ? chipActive : chipInactive}`}
+                onClick={() => onMuscleChange(toggle(selectedMuscle, m))}
+                aria-pressed={active}
+              >
+                {formatMuscleLabel(m)}
+              </button>
+            );
+          })}
         </div>
       </div>
       <div>
-        <div className={sectionLabel}>Equipment</div>
-        <div className="flex flex-wrap gap-1.5">
-          <button
-            type="button"
-            className={`${chipBase} ${selectedEquipment === null ? chipActive : chipInactive}`}
-            onClick={() => onEquipmentChange(null)}
-          >
-            All
-          </button>
-          {equipmentOptions.map((eq) => (
-            <button
-              key={eq}
-              type="button"
-              className={`${chipBase} ${selectedEquipment === eq ? chipActive : chipInactive}`}
-              onClick={() => onEquipmentChange(eq)}
-            >
-              {eq}
+        <div className={sectionLabel}>
+          <span>Equipment</span>
+          {selectedEquipment.length > 0 && (
+            <button type="button" className={clearBtn} onClick={() => onEquipmentChange([])}>
+              Clear
             </button>
-          ))}
+          )}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {equipmentOptions.map((eq) => {
+            const active = selectedEquipment.includes(eq);
+            return (
+              <button
+                key={eq}
+                type="button"
+                className={`${chipBase} ${active ? chipActive : chipInactive}`}
+                onClick={() => onEquipmentChange(toggle(selectedEquipment, eq))}
+                aria-pressed={active}
+              >
+                {eq}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

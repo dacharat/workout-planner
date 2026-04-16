@@ -1,5 +1,5 @@
 import { exerciseById } from '@/data/exercises';
-import { DAYS } from './constants';
+import { DAYS, type DayKey } from './constants';
 import type { RestDays, WeeklyPlan } from './plan-context';
 
 export type VolumeStatus = 'low' | 'optimal' | 'high';
@@ -9,10 +9,13 @@ export const VOLUME_MAX = 25;
 export function computeMuscleVolume(
   plan: WeeklyPlan,
   restDays?: RestDays,
+  dayFilter?: DayKey[],
 ): Record<string, number> {
   const volume: Record<string, number> = {};
+  const allowed = dayFilter && dayFilter.length > 0 ? new Set(dayFilter) : null;
   for (const day of DAYS) {
     if (restDays?.[day]) continue;
+    if (allowed && !allowed.has(day)) continue;
     for (const entry of plan[day]) {
       const exercise = exerciseById[entry.id];
       if (!exercise) continue;

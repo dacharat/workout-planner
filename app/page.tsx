@@ -3,12 +3,14 @@
 import { Header } from '@/components/Header';
 import { DayCard } from '@/components/DayCard';
 import { MuscleVolumeSummary } from '@/components/MuscleVolumeSummary';
+import { SharedPlanBanner } from '@/components/SharedPlanBanner';
 import { DAYS } from '@/lib/constants';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Header />
+      <SharedPlanBanner />
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
           <section aria-label="Weekly plan">
