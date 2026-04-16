@@ -39,15 +39,9 @@ function toCompact(state: PlanState): unknown[] {
 }
 
 function fromCompact(raw: unknown): PlanState | null {
-  if (!Array.isArray(raw) || raw.length !== 8) {
-    console.warn('[share] decode failed: expected array of length 8, got', raw);
-    return null;
-  }
+  if (!Array.isArray(raw) || raw.length !== 8) return null;
   const [bits, ...dayArrs] = raw as [unknown, ...unknown[]];
-  if (typeof bits !== 'number') {
-    console.warn('[share] decode failed: bits is not a number', bits);
-    return null;
-  }
+  if (typeof bits !== 'number') return null;
 
   const days = {} as WeeklyPlan;
   const restDays = {} as RestDays;
@@ -55,33 +49,20 @@ function fromCompact(raw: unknown): PlanState | null {
   for (let i = 0; i < 7; i++) {
     const d = DAYS[i];
     const arr = dayArrs[i];
-    if (!Array.isArray(arr)) {
-      console.warn(`[share] decode failed: day ${d} is not an array`, arr);
-      return null;
-    }
+    if (!Array.isArray(arr)) return null;
 
     const entries: ExerciseEntry[] = [];
     for (const t of arr) {
-      if (!Array.isArray(t) || t.length !== 3) {
-        console.warn(`[share] decode failed: entry not a 3-tuple in ${d}`, t);
-        return null;
-      }
+      if (!Array.isArray(t) || t.length !== 3) return null;
       const [idx, s, r] = t as [unknown, unknown, unknown];
       if (
         typeof idx !== 'number' ||
         typeof s !== 'number' ||
         typeof r !== 'number'
-      ) {
-        console.warn(`[share] decode failed: entry types wrong in ${d}`, t);
+      )
         return null;
-      }
       const id = exerciseIds[idx];
-      if (!id) {
-        console.warn(
-          `[share] skipping entry in ${d}: index ${idx} out of range (max ${exerciseIds.length - 1})`,
-        );
-        continue;
-      }
+      if (!id) continue;
       entries.push({ id, sets: s, reps: r });
     }
 
@@ -112,8 +93,7 @@ export function encodePlanState(state: PlanState): string {
 export function decodePlanState(encoded: string): PlanState | null {
   try {
     return fromCompact(JSON.parse(b64urlDecode(encoded)));
-  } catch (err) {
-    console.warn('[share] decode threw:', err, 'encoded:', encoded);
+  } catch {
     return null;
   }
 }
