@@ -7,9 +7,14 @@ import {
   type BodyMuscle,
   type MusclePolygons,
 } from '@/lib/body-svg';
-import { formatMuscleLabel, getStatus } from '@/lib/volume';
+import {
+  formatMuscleLabel,
+  formatWeighted,
+  getStatus,
+  type MuscleBreakdown,
+} from '@/lib/volume';
 
-type Props = { volume: Record<string, number> };
+type Props = { volume: Record<string, MuscleBreakdown> };
 
 // Map our dataset muscle keys -> anatomical muscle names (may be multiple).
 const MUSCLE_MAP: Record<string, BodyMuscle[]> = {
@@ -65,22 +70,25 @@ const FILL_CLASSES: Record<Intensity, string> = {
 type MuscleSummary = { intensity: Intensity; sources: string[] };
 
 function buildMuscleMap(
-  volume: Record<string, number>,
+  volume: Record<string, MuscleBreakdown>,
 ): Map<BodyMuscle, MuscleSummary> {
   const perMuscle = new Map<BodyMuscle, MuscleSummary>();
 
-  for (const [key, sets] of Object.entries(volume)) {
-    if (!sets) continue;
+  for (const [key, breakdown] of Object.entries(volume)) {
+    if (!breakdown.weighted) continue;
     const mapped = MUSCLE_MAP[key];
     if (!mapped) continue;
-    const intensity = STATUS_INTENSITY[getStatus(sets)];
-    const label = `${formatMuscleLabel(key)}: ${sets} sets`;
+    const intensity = STATUS_INTENSITY[getStatus(breakdown.weighted)];
+    const detail =
+      breakdown.secondary > 0
+        ? `${formatMuscleLabel(key)}: ${formatWeighted(breakdown.weighted)} sets (${breakdown.main} main + ${breakdown.secondary} assist)`
+        : `${formatMuscleLabel(key)}: ${formatWeighted(breakdown.weighted)} sets`;
     for (const m of mapped) {
       const prev = perMuscle.get(m);
       if (!prev) {
-        perMuscle.set(m, { intensity, sources: [label] });
+        perMuscle.set(m, { intensity, sources: [detail] });
       } else {
-        prev.sources.push(label);
+        prev.sources.push(detail);
         if (prev.intensity < intensity) prev.intensity = intensity;
       }
     }

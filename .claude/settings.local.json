@@ -5,7 +5,10 @@
       "Bash(yarn build:*)",
       "Bash(yarn remove:*)",
       "Bash(node -e ':*)",
-      "Bash(node -e \"const {exercises}=require\\('./data/exercises.ts'\\)\")"
+      "Bash(node -e \"const {exercises}=require\\('./data/exercises.ts'\\)\")",
+      "Bash(node scripts/sync-exercises.mjs)",
+      "Bash(rm data/exercise.csv)",
+      "Bash(yarn sync-exercises *)"
     ]
   }
 }

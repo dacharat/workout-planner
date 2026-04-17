@@ -5,6 +5,7 @@ import {
   useContext,
   useEffect,
   useReducer,
+  useState,
   type ReactNode,
 } from 'react';
 import { DAYS, STORAGE_KEYS, type DayKey } from './constants';
@@ -144,32 +145,42 @@ const isLegacyPlan = (value: unknown): value is WeeklyPlan => {
 
 export function PlanProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(reducer, undefined, emptyState);
+  // Guard: don't persist on the initial render. Otherwise the persist effect
+  // fires on mount with the empty state and overwrites saved data before the
+  // hydrate effect's dispatched HYDRATE can land.
+  // Using useState (not useRef) so flipping the flag schedules a re-render —
+  // ensuring the persist effect observes both `hydrated=true` AND the
+  // hydrated state (both land in the same commit after dispatch is flushed).
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEYS.plan);
-      if (!raw) return;
-      const parsed = JSON.parse(raw);
-      if (isValidState(parsed)) {
-        dispatch({ type: 'HYDRATE', state: parsed });
-      } else if (isLegacyPlan(parsed)) {
-        dispatch({
-          type: 'HYDRATE',
-          state: { days: parsed, restDays: emptyRest() },
-        });
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (isValidState(parsed)) {
+          dispatch({ type: 'HYDRATE', state: parsed });
+        } else if (isLegacyPlan(parsed)) {
+          dispatch({
+            type: 'HYDRATE',
+            state: { days: parsed, restDays: emptyRest() },
+          });
+        }
       }
     } catch {
       // ignore corrupt storage
     }
+    setHydrated(true);
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     try {
       localStorage.setItem(STORAGE_KEYS.plan, JSON.stringify(state));
     } catch {
       // quota or private mode — silent
     }
-  }, [state]);
+  }, [state, hydrated]);
 
   const value: PlanContextValue = {
     plan: state.days,

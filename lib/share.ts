@@ -7,7 +7,7 @@ import type {
 } from './plan-context';
 import { exerciseIds, exerciseIdToIndex } from '@/data/exercises';
 
-const HASH_PREFIX = '#plan=';
+const PARAM_KEY = 'plan';
 
 /*
  * Wire format: [restBitmask, day0, ..., day6]
@@ -100,19 +100,28 @@ export function decodePlanState(encoded: string): PlanState | null {
 
 export function buildShareUrl(state: PlanState): string {
   const encoded = encodePlanState(state);
-  const { origin, pathname, search } = window.location;
-  return `${origin}${pathname}${search}${HASH_PREFIX}${encoded}`;
+  const url = new URL(window.location.href);
+  url.searchParams.set(PARAM_KEY, encoded);
+  url.hash = '';
+  return url.toString();
 }
 
-export function readSharedPlanFromHash(): PlanState | null {
+export function readSharedPlanFromUrl(): PlanState | null {
   if (typeof window === 'undefined') return null;
-  const hash = window.location.hash;
-  if (!hash.startsWith(HASH_PREFIX)) return null;
-  return decodePlanState(hash.slice(HASH_PREFIX.length));
+  const params = new URLSearchParams(window.location.search);
+  const encoded = params.get(PARAM_KEY);
+  if (!encoded) return null;
+  return decodePlanState(encoded);
 }
 
-export function clearShareHash(): void {
+export function clearSharedPlanFromUrl(): void {
   if (typeof window === 'undefined') return;
-  const { pathname, search } = window.location;
-  window.history.replaceState(null, '', pathname + search);
+  const url = new URL(window.location.href);
+  url.searchParams.delete(PARAM_KEY);
+  const search = url.searchParams.toString();
+  window.history.replaceState(
+    null,
+    '',
+    url.pathname + (search ? `?${search}` : '') + url.hash,
+  );
 }

@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { usePlan, type PlanState } from '@/lib/plan-context';
-import { clearShareHash, readSharedPlanFromHash } from '@/lib/share';
+import {
+  clearSharedPlanFromUrl,
+  readSharedPlanFromUrl,
+} from '@/lib/share';
 import { DAYS } from '@/lib/constants';
 
 export function SharedPlanBanner() {
@@ -10,7 +13,7 @@ export function SharedPlanBanner() {
   const [pending, setPending] = useState<PlanState | null>(null);
 
   useEffect(() => {
-    const shared = readSharedPlanFromHash();
+    const shared = readSharedPlanFromUrl();
     if (shared) setPending(shared);
   }, []);
 
@@ -23,12 +26,12 @@ export function SharedPlanBanner() {
 
   const handleApply = () => {
     hydrate(pending);
-    clearShareHash();
+    clearSharedPlanFromUrl();
     setPending(null);
   };
 
   const handleDismiss = () => {
-    clearShareHash();
+    clearSharedPlanFromUrl();
     setPending(null);
   };
 

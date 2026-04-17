@@ -1,0 +1,41 @@
+id,name,muscles_main,muscles_secondary,equipment,movement
+plank_std,Standard Plank,"['abs', 'core']","['shoulders', 'glutes']","['bodyweight']",core
+side_plank_std,Side Plank,"['obliques']","['core', 'shoulders']","['bodyweight']",core
+weighted_sit_up,Weighted Sit-Up,"['abs']","['core', 'hip_flexors']","['dumbbell', 'plate']",core
+cable_crunch_kneeling,Kneeling Cable Crunch,"['abs']","['hip_flexors']","['cable']",core
+hanging_leg_raise,Hanging Leg Raise,"['abs']","['hip_flexors', 'grip']","['bodyweight']",core
+hanging_knee_raise,Hanging Knee Raise,"['lower_abs']","['grip']","['bodyweight']",core
+russian_twist_db,Weighted Russian Twist,"['obliques']","['abs']","['dumbbell']",core
+cable_woodchopper_high_low,Cable Woodchopper (High to Low),"['obliques']","['abs', 'shoulders']","['cable']",core
+cable_woodchopper_low_high,Cable Woodchopper (Low to High),"['obliques']","['abs', 'shoulders']","['cable']",core
+ab_wheel_rollout,Ab Wheel Rollout,"['abs']","['core', 'lats']","['other']",core
+hollow_hold,Hollow Body Hold,"['abs', 'core']","","['bodyweight']",core
+dead_bug_std,Dead Bug,"['abs', 'core']","","['bodyweight']",core
+bird_dog_std,Bird Dog,"['core', 'lower_back']","['glutes']","['bodyweight']",core
+dragon_flag_std,Dragon Flag,"['abs', 'core']","['core', 'lats']","['bodyweight']",core
+l_sit_std,L-Sit,"['abs', 'core']","['shoulders', 'hip_flexors']","['bodyweight']",core
+pallof_press_cable,Cable Pallof Press,"['core', 'obliques']","['shoulders']","['cable']",core
+superman_hold,Superman Hold,"['lower_back']","['glutes']","['bodyweight']",core
+v_up_std,V-Ups,"['abs']","['hip_flexors']","['bodyweight']",core
+bicycle_crunch_std,Bicycle Crunches,"['abs', 'obliques']","","['bodyweight']",core
+mountain_climber,Mountain Climbers,"['core']","['cardio', 'shoulders']","['bodyweight']",core
+windshield_wiper,Windshield Wipers,"['obliques']","['abs', 'core']","['bodyweight']",core
+flutter_kicks,Flutter Kicks,"['lower_abs']","['hip_flexors']","['bodyweight']",core
+reverse_crunch,Reverse Crunch,"['lower_abs']","","['bodyweight']",core
+plank_shoulder_tap,Plank Shoulder Taps,"['core']","['shoulders']","['bodyweight']",core
+landmine_twist,Landmine Twist,"['obliques']","['core', 'shoulders']","['barbell']",core
+kb_windmill_std,Kettlebell Windmill,"['obliques']","['shoulders', 'hamstrings']","['kettlebell']",core
+kb_turkish_get_up,Turkish Get-Up,"['full_body']","['shoulders', 'core', 'stability']","['kettlebell']",core
+kb_halo_std,Kettlebell Halo,"['shoulders']","['core']","['kettlebell']",core
+bear_crawl_std,Bear Crawl,"['core']","['shoulders', 'quads']","['bodyweight']",core
+alligator_drag,Alligator Drag,"['core']","['shoulders']","['other']",core
+hard_roll_std,Hard Roll,"['core']","['coordination']","['bodyweight']",core
+plank_drag_kb,Kettlebell Plank Drag,"['core', 'obliques']","['shoulders']","['kettlebell']",core
+band_pallof_press,Banded Pallof Press,"['core', 'obliques']","['shoulders']","['band']",core
+hollow_body_rock,Hollow Body Rock,"['abs', 'core']","","['bodyweight']",core
+toes_to_bar,Toes To Bar,"['abs', 'core']","['grip', 'lat']","['bodyweight']",core
+knee_to_elbow,Knee To Elbow,"['abs', 'obliques']","","['bodyweight']",core
+copenhagen_plank,Copenhagen Plank,"['obliques', 'adductors']","['core']","['bodyweight', 'other']",core
+suitcase_carry_db,Suitcase Carry,"['obliques', 'core']","['forearms']","['dumbbell']",core
+overhead_carry_db,Overhead DB Carry,"['shoulders', 'core']","","['dumbbell']",core
+captain_chair_leg_raise,Captain's Chair Leg Raise,"['abs']","['hip_flexors']","['machine']",core

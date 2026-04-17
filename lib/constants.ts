@@ -16,4 +16,4 @@ export const STORAGE_KEYS = {
   theme: 'workout-planner:theme',
 } as const;
 
-export const MOVEMENTS = ['push', 'pull', 'legs', 'core', 'full_body'] as const;
+export const MOVEMENTS = ['push', 'pull', 'legs', 'core'] as const;

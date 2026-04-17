@@ -1,0 +1,89 @@
+id,name,muscles_main,muscles_secondary,equipment,movement
+bench_press_bb,Barbell Bench Press,"['chest']","['triceps', 'shoulders']","['barbell']",push
+bench_press_db,Dumbbell Bench Press,"['chest']","['triceps', 'shoulders']","['dumbbell']",push
+incline_bb_press,Incline Barbell Press,"['upper_chest']","['shoulders', 'triceps']","['barbell']",push
+incline_db_press,Incline Dumbbell Press,"['upper_chest']","['shoulders', 'triceps']","['dumbbell']",push
+decline_bb_press,Decline Barbell Press,"['lower_chest']","['triceps', 'shoulders']","['barbell']",push
+decline_db_press,Decline Dumbbell Press,"['lower_chest']","['triceps', 'shoulders']","['dumbbell']",push
+close_grip_bench,Close Grip Bench Press,"['triceps']","['chest', 'shoulders']","['barbell']",push
+reverse_grip_bench,Reverse Grip Barbell Press,"['upper_chest']","['triceps']","['barbell']",push
+floor_press_bb,Barbell Floor Press,"['chest']","['triceps']","['barbell']",push
+floor_press_db,Dumbbell Floor Press,"['chest']","['triceps']","['dumbbell']",push
+spoto_press,Spoto Press (Paused Bench),"['chest']","['triceps', 'shoulders']","['barbell']",push
+pin_bench_press,Pin Bench Press,"['chest']","['triceps']","['barbell']",push
+cambered_bar_bench,Cambered Bar Bench Press,"['chest']","['shoulders']","['barbell']",push
+machine_chest_press,Machine Chest Press,"['chest']","['triceps']","['machine']",push
+incline_machine_press,Incline Machine Chest Press,"['upper_chest']","['triceps']","['machine']",push
+decline_machine_press,Decline Machine Chest Press,"['lower_chest']","['triceps']","['machine']",push
+hs_chest_press,Hammer Strength Chest Press,"['chest']","['triceps']","['machine']",push
+pec_deck_fly,Pec Deck Fly,"['chest']","['shoulders']","['machine']",push
+chest_fly_db,Dumbbell Chest Fly,"['chest']","['shoulders']","['dumbbell']",push
+incline_fly_db,Incline Dumbbell Fly,"['upper_chest']","['shoulders']","['dumbbell']",push
+decline_fly_db,Decline Dumbbell Fly,"['lower_chest']","['shoulders']","['dumbbell']",push
+cable_fly_mid,Standing Cable Chest Fly (Mid Height),"['chest']","['shoulders']","['cable']",push
+cable_fly_high_low,High-to-Low Cable Fly (Lower Chest),"['lower_chest']","['shoulders']","['cable']",push
+cable_fly_low_high,Low-to-High Cable Fly (Upper Chest),"['upper_chest']","['shoulders']","['cable']",push
+incline_cable_fly,Incline Cable Fly (Bench),"['upper_chest']","['shoulders']","['cable']",push
+decline_cable_fly,Decline Cable Fly (Bench),"['lower_chest']","['shoulders']","['cable']",push
+single_arm_cable_fly,Single Arm Cable Fly,"['chest']","['core']","['cable']",push
+single_arm_db_press,Single Arm Dumbbell Press,"['chest']","['core', 'triceps']","['dumbbell']",push
+svend_press_plate,Svend Press,"['chest']","['shoulders']","['plate']",push
+dips_chest,Chest Dips,"['lower_chest']","['triceps', 'shoulders']","['bodyweight']",push
+weighted_chest_dips,Weighted Chest Dips,"['lower_chest']","['triceps', 'shoulders']","['bodyweight', 'other']",push
+push_up_std,Standard Push-Up,"['chest']","['triceps', 'shoulders']","['bodyweight']",push
+push_up_diamond,Diamond Push-Up,"['triceps']","['chest', 'shoulders']","['bodyweight']",push
+push_up_wide,Wide Push-Up,"['chest']","['shoulders']","['bodyweight']",push
+push_up_archer,Archer Push-Up,"['chest']","['triceps', 'core']","['bodyweight']",push
+push_up_decline,Decline Push-Up,"['upper_chest']","['triceps', 'shoulders']","['bodyweight']",push
+push_up_incline,Incline Push-Up,"['lower_chest']","['triceps']","['bodyweight']",push
+push_up_plus,Push-Up Plus,"['serratus_anterior']","['chest', 'triceps']","['bodyweight']",push
+pike_push_up,Pike Push-Up,"['shoulders']","['triceps']","['bodyweight']",push
+handstand_push_up,Handstand Push-Up,"['shoulders']","['triceps']","['bodyweight']",push
+clap_push_up,Clap Push-Up,"['chest']","['triceps', 'power']","['bodyweight']",push
+crossover_push_up,Crossover Push-Up,"['chest']","['core', 'triceps']","['bodyweight']",push
+pseudo_planche_pushup,Pseudo Planche Push-Up,"['shoulders']","['chest', 'triceps']","['bodyweight']",push
+ohp_bb,Barbell Overhead Press,"['shoulders']","['triceps', 'core', 'traps']","['barbell']",push
+military_press_bb,Military Press (Strict),"['shoulders']","['triceps', 'core']","['barbell']",push
+shoulder_press_db,Dumbbell Shoulder Press,"['shoulders']","['triceps']","['dumbbell']",push
+arnold_press_db,Arnold Press,"['shoulders']","['triceps', 'traps', 'rear_delts']","['dumbbell']",push
+shoulder_press_machine,Machine Shoulder Press,"['shoulders']","['triceps']","['machine']",push
+push_press_bb,Barbell Push Press,"['shoulders']","['legs', 'triceps', 'core']","['barbell']",push
+jerk_bb,Barbell Jerk,"['shoulders']","['legs', 'triceps', 'power']","['barbell']",push
+lateral_raise_db,Dumbbell Lateral Raise,"['shoulders']","['traps']","['dumbbell']",push
+lateral_raise_cable,Cable Lateral Raise,"['shoulders']","['traps']","['cable']",push
+lateral_raise_machine,Machine Lateral Raise,"['shoulders']","","['machine']",push
+front_raise_db,Dumbbell Front Raise,"['shoulders']","['upper_chest']","['dumbbell']",push
+front_raise_bb,Barbell Front Raise,"['shoulders']","['upper_chest']","['barbell']",push
+front_raise_plate,Plate Front Raise,"['shoulders']","","['plate']",push
+y_raise_db,Incline Dumbbell Y-Raise,"['shoulders']","['traps', 'upper_back']","['dumbbell']",push
+upright_row_bb,Barbell Upright Row,"['traps', 'shoulders']","['biceps']","['barbell']",push
+bus_driver_plate,Bus Driver,"['shoulders']","['forearms']","['plate']",push
+landmine_press_std,Landmine Press,"['shoulders', 'chest']","['triceps']","['barbell']",push
+javelin_press,Javelin Press,"['shoulders']","['core', 'stability']","['barbell']",push
+skull_crushers_ez,EZ-Bar Skull Crushers,"['triceps']","['forearms']","['barbell']",push
+skull_crushers_db,Dumbbell Skull Crushers,"['triceps']","['forearms']","['dumbbell']",push
+tricep_pushdown_rope,Cable Rope Pushdown,"['triceps']","","['cable']",push
+tricep_pushdown_v_bar,V-Bar Tricep Pushdown,"['triceps']","","['cable']",push
+tricep_pushdown_straight,Straight Bar Pushdown,"['triceps']","","['cable']",push
+reverse_grip_pushdown,Reverse Grip Cable Pushdown,"['triceps']","","['cable']",push
+oh_tricep_ext_db,Overhead Dumbbell Extension,"['triceps']","","['dumbbell']",push
+oh_tricep_ext_cable,Overhead Cable Extension,"['triceps']","","['cable']",push
+tricep_kickback_db,Dumbbell Tricep Kickback,"['triceps']","['shoulders']","['dumbbell']",push
+tricep_kickback_cable,Cable Tricep Kickback,"['triceps']","","['cable']",push
+bench_dips,Bench Dips,"['triceps']","['chest', 'shoulders']","['bodyweight']",push
+weighted_bench_dips,Weighted Bench Dips,"['triceps']","['chest', 'shoulders']","['bodyweight', 'plate']",push
+jm_press_bb,JM Press,"['triceps']","['chest']","['barbell']",push
+band_push_up,Banded Push-Up,"['chest']","['triceps', 'shoulders']","['band', 'bodyweight']",push
+band_chest_press,Banded Chest Press,"['chest']","['triceps', 'shoulders']","['band']",push
+band_overhead_press,Banded Overhead Press,"['shoulders']","['triceps']","['band']",push
+band_lateral_raise,Banded Lateral Raise,"['shoulders']","['traps']","['band']",push
+band_tricep_ext,Banded Tricep Extension,"['triceps']","","['band']",push
+kb_overhead_press,Kettlebell Overhead Press,"['shoulders']","['triceps', 'core']","['kettlebell']",push
+kb_floor_press,Kettlebell Floor Press,"['chest']","['triceps']","['kettlebell']",push
+kb_arnold_press,Kettlebell Arnold Press,"['shoulders']","['triceps', 'rear_delts']","['kettlebell']",push
+kb_bottoms_up_press,Bottoms-Up KB Press,"['shoulders']","['grip', 'core']","['kettlebell']",push
+smith_bench_press,Smith Machine Bench Press,"['chest']","['triceps', 'shoulders']","['machine']",push
+smith_shoulder_press,Smith Machine Shoulder Press,"['shoulders']","['triceps']","['machine']",push
+smith_incline_press,Smith Machine Incline Press,"['upper_chest']","['triceps']","['machine']",push
+machine_tricep_ext,Machine Tricep Extension,"['triceps']","","['machine']",push
+wall_slide_serratus,Serratus Wall Slide,"['serratus_anterior']","['shoulders']","['bodyweight']",push

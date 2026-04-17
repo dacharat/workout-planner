@@ -1,0 +1,73 @@
+id,name,muscles_main,muscles_secondary,equipment,movement
+deadlift_conv,Conventional Deadlift,"['glutes', 'hamstrings']","['lower_back', 'traps', 'forearms']","['barbell']",pull
+deadlift_sumo,Sumo Deadlift,"['glutes', 'quads']","['inner_thigh', 'back']","['barbell']",pull
+deadlift_trap_bar,Trap Bar Deadlift,"['glutes', 'quads']","['back', 'hamstrings']","['other']",pull
+rack_pull,Barbell Rack Pull,"['upper_back', 'traps']","['glutes', 'forearms']","['barbell']",pull
+deficit_deadlift,Deficit Deadlift,"['glutes', 'hamstrings']","['lower_back', 'forearms']","['barbell']",pull
+snatch_grip_deadlift,Snatch Grip Deadlift,"['back', 'glutes']","['hamstrings', 'traps']","['barbell']",pull
+bb_row_bent_over,Bent Over Barbell Row,"['back']","['biceps', 'rear_delts', 'core']","['barbell']",pull
+pendlay_row,Pendlay Row,"['back']","['biceps', 'core']","['barbell']",pull
+db_row_one_arm,One-Arm Dumbbell Row,"['back']","['biceps', 'core']","['dumbbell']",pull
+seated_cable_row,Seated Cable Row,"['back']","['biceps', 'rear_delts']","['cable']",pull
+seated_row_wide,Wide Grip Seated Row,"['upper_back', 'traps']","['biceps', 'rear_delts']","['cable']",pull
+lat_pulldown_wide,Wide Grip Lat Pulldown,"['back']","['biceps', 'shoulders']","['machine']",pull
+lat_pulldown_vbar,V-Bar Lat Pulldown,"['back']","['biceps', 'forearms']","['machine']",pull
+lat_pulldown_underhand,Underhand Lat Pulldown,"['back', 'biceps']","['forearms']","['machine']",pull
+lat_pulldown_single,Single Arm Lat Pulldown,"['back']","['biceps', 'core']","['cable']",pull
+pull_up_std,Standard Pull-Up,"['back']","['biceps', 'forearms']","['bodyweight']",pull
+chin_up_std,Chin-Up,"['biceps', 'back']","['forearms']","['bodyweight']",pull
+weighted_pull_up,Weighted Pull-Up,"['back']","['biceps', 'forearms']","['bodyweight', 'other']",pull
+neutral_pull_up,Neutral Grip Pull-Up,"['back']","['biceps', 'brachialis']","['bodyweight']",pull
+archer_pull_up,Archer Pull-Up,"['back']","['biceps', 'core']","['bodyweight']",pull
+t_bar_row,T-Bar Row,"['back']","['biceps', 'traps']","['barbell']",pull
+kroc_row,Kroc Row,"['back']","['biceps', 'forearms', 'traps']","['dumbbell']",pull
+meadows_row,Meadows Row,"['back']","['biceps', 'rear_delts']","['barbell']",pull
+seal_row,Seal Row,"['back']","['rear_delts', 'biceps']","['barbell']",pull
+inverted_row,Inverted Row,"['back']","['biceps', 'core']","['bodyweight']",pull
+face_pull_rope,Cable Face Pull,"['rear_deltoids']","['traps', 'upper_back']","['cable']",pull
+straight_arm_pulldown,Straight Arm Pulldown,"['back']","['triceps', 'core']","['cable']",pull
+pullover_db,Dumbbell Pullover,"['chest', 'back']","['triceps']","['dumbbell']",pull
+pullover_bb,Barbell Pullover,"['chest', 'back']","['triceps']","['barbell']",pull
+rear_delt_fly_db,Dumbbell Rear Delt Fly,"['rear_deltoids']","['upper_back']","['dumbbell']",pull
+rear_delt_fly_machine,Reverse Pec Deck Fly,"['rear_deltoids']","['traps']","['machine']",pull
+shrug_bb,Barbell Shrug,"['traps']","['forearms']","['barbell']",pull
+shrug_db,Dumbbell Shrug,"['traps']","['forearms']","['dumbbell']",pull
+shrug_behind_back,Behind Back Shrug,"['traps']","['forearms']","['barbell']",pull
+kelso_shrug,Kelso Shrug,"['mid_traps', 'rhomboids']","['rear_delts']","['barbell']",pull
+shrug_smith,Smith Machine Shrug,"['traps']","","['machine']",pull
+bicep_curl_bb,Barbell Bicep Curl,"['biceps']","['forearms']","['barbell']",pull
+bicep_curl_db,Dumbbell Bicep Curl,"['biceps']","['forearms']","['dumbbell']",pull
+hammer_curl_db,Dumbbell Hammer Curl,"['biceps', 'forearms']","['brachialis']","['dumbbell']",pull
+cross_body_hammer_curl,Cross Body Hammer Curl,"['brachialis', 'biceps']","['forearms', 'shoulders']","['dumbbell']",pull
+preacher_curl_ez,EZ-Bar Preacher Curl,"['biceps']","['forearms']","['barbell']",pull
+preacher_curl_db,Dumbbell Preacher Curl,"['biceps']","['forearms']","['dumbbell']",pull
+concentration_curl,Concentration Curl,"['biceps']","","['dumbbell']",pull
+spider_curl_db,Spider Curl,"['biceps']","","['dumbbell']",pull
+incline_db_curl,Incline Dumbbell Curl,"['biceps']","","['dumbbell']",pull
+zottman_curl,Zottman Curl,"['biceps']","['forearms']","['dumbbell']",pull
+zottman_hammer_curl,Zottman Hammer Curl,"['biceps', 'forearms']","","['dumbbell']",pull
+reverse_curl_bb,Barbell Reverse Curl,"['forearms', 'biceps']","","['barbell']",pull
+bayesian_curl,Bayesian Cable Curl,"['biceps']","","['cable']",pull
+cable_bicep_curl,Cable Bicep Curl,"['biceps']","","['cable']",pull
+ez_bar_curl,EZ Bar Curl,"['biceps']","['forearms']","['barbell']",pull
+wrist_curl_bb,Barbell Wrist Curl,"['forearms']","","['barbell']",pull
+wrist_extension_db,Dumbbell Wrist Extension,"['forearms']","","['dumbbell']",pull
+plate_pinch_hold,Plate Pinch,"['forearms']","['grip']","['plate']",pull
+farmers_walk_db,Farmer's Walk,"['forearms']","['traps', 'core', 'glutes']","['dumbbell']",pull
+fat_bar_deadlift,Fat Bar Deadlift,"['glutes', 'forearms']","['hamstrings', 'back']","['barbell']",pull
+kb_swing_std,Kettlebell Swing,"['glutes', 'hamstrings']","['lower_back', 'core', 'shoulders']","['kettlebell']",pull
+kb_snatch_std,Kettlebell Snatch,"['full_body']","['shoulders', 'back', 'legs']","['kettlebell']",pull
+kb_clean_std,Kettlebell Clean,"['full_body']","['legs', 'back', 'forearms']","['kettlebell']",pull
+kb_row_one_arm,One-Arm Kettlebell Row,"['back']","['biceps', 'core']","['kettlebell']",pull
+band_pull_apart,Resistance Band Pull Apart,"['rear_delts', 'upper_back']","","['band']",pull
+band_face_pull,Banded Face Pull,"['rear_delts']","['traps']","['band']",pull
+band_bicep_curl,Banded Bicep Curl,"['biceps']","","['band']",pull
+band_seated_row,Seated Banded Row,"['back']","['biceps']","['band']",pull
+muscle_up_bar,Bar Muscle-Up,"['back', 'chest', 'triceps']","['shoulders', 'core']","['bodyweight']",pull
+renegade_row_db,Renegade Row,"['back', 'core']","['shoulders', 'biceps']","['dumbbell']",pull
+high_pull_bb,Barbell High Pull,"['traps', 'shoulders']","['legs', 'lower_back']","['barbell']",pull
+scap_pull_up,Scapular Pull-Up,"['traps', 'back']","['forearms']","['bodyweight']",pull
+dead_hang,Dead Hang,"['forearms']","['back', 'shoulders']","['bodyweight']",pull
+atlas_stones,Atlas Stones,"['back', 'glutes']","['forearms', 'lower_back']","['other']",pull
+tire_flip,Tire Flip,"['glutes', 'back']","['legs', 'shoulders']","['other']",pull
+rope_climb,Rope Climb,"['back', 'biceps']","['core', 'legs', 'forearms']","['other']",pull

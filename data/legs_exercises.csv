@@ -1,0 +1,51 @@
+id,name,muscles_main,muscles_secondary,equipment,movement
+back_squat_bb,Barbell Back Squat,"['quads', 'glutes']","['hamstrings', 'lower_back', 'core']","['barbell']",legs
+front_squat_bb,Barbell Front Squat,"['quads']","['upper_back', 'core']","['barbell']",legs
+zercher_squat_bb,Zercher Squat,"['quads', 'core']","['upper_back', 'glutes']","['barbell']",legs
+goblet_squat_db,Goblet Squat,"['quads', 'glutes']","['core']","['dumbbell']",legs
+box_squat_bb,Barbell Box Squat,"['glutes', 'hamstrings']","['quads', 'lower_back']","['barbell']",legs
+hack_squat_machine,Machine Hack Squat,"['quads']","['glutes']","['machine']",legs
+leg_press_std,Standard Leg Press,"['quads']","['glutes', 'hamstrings']","['machine']",legs
+leg_extension_machine,Leg Extension,"['quads']","","['machine']",legs
+rdl_bb,Barbell Romanian Deadlift,"['hamstrings', 'glutes']","['lower_back', 'forearms']","['barbell']",legs
+rdl_db,Dumbbell Romanian Deadlift,"['hamstrings', 'glutes']","['lower_back', 'forearms']","['dumbbell']",legs
+stiff_leg_dl_bb,Stiff Leg Deadlift,"['hamstrings']","['lower_back']","['barbell']",legs
+lying_leg_curl_machine,Lying Leg Curl,"['hamstrings']","","['machine']",legs
+seated_leg_curl_machine,Seated Leg Curl,"['hamstrings']","","['machine']",legs
+standing_leg_curl,Standing Leg Curl,"['hamstrings']","","['machine']",legs
+hip_thrust_bb,Barbell Hip Thrust,"['glutes']","['hamstrings']","['barbell']",legs
+hip_thrust_machine,Hip Thrust Machine,"['glutes']","['hamstrings']","['machine']",legs
+glute_bridge_std,Bodyweight Glute Bridge,"['glutes']","['hamstrings']","['bodyweight']",legs
+bulgarian_split_squat,Bulgarian Split Squat,"['quads', 'glutes']","['hamstrings', 'core']","['dumbbell']",legs
+lunge_walking_db,Walking Dumbbell Lunge,"['quads', 'glutes']","['hamstrings']","['dumbbell']",legs
+reverse_lunge_db,Reverse Dumbbell Lunge,"['quads', 'glutes']","['hamstrings']","['dumbbell']",legs
+side_lunge_std,Bodyweight Side Lunge,"['quads', 'adductors']","['glutes']","['bodyweight']",legs
+curtsy_lunge_db,Dumbbell Curtsy Lunge,"['glutes', 'quads']","['adductors']","['dumbbell']",legs
+step_up_weighted,Weighted Step-Up,"['quads', 'glutes']","['core']","['dumbbell']",legs
+pistol_squat_std,Pistol Squat,"['quads', 'glutes']","['core']","['bodyweight']",legs
+sissy_squat_std,Sissy Squat,"['quads']","","['bodyweight']",legs
+nordic_curl_std,Nordic Hamstring Curl,"['hamstrings']","['glutes']","['bodyweight']",legs
+good_morning_bb,Barbell Good Morning,"['hamstrings', 'lower_back']","['glutes']","['barbell']",legs
+standing_calf_raise_machine,Standing Calf Raise,"['calves']","","['machine']",legs
+seated_calf_raise_machine,Seated Calf Raise,"['calves']","","['machine']",legs
+donkey_calf_raise,Donkey Calf Raise,"['calves']","","['machine']",legs
+leg_press_calf_raise,Calf Raise on Leg Press,"['calves']","","['machine']",legs
+tibialis_raise_std,Tibialis Raise,"['tibialis_anterior']","","['bodyweight']",legs
+hip_abduction_machine,Hip Abduction Machine,"['glute_medius']","['hips']","['machine']",legs
+hip_adduction_machine,Hip Adduction Machine,"['adductors']","['inner_thigh']","['machine']",legs
+sumo_squat_db,Sumo Squat,"['glutes', 'inner_thigh']","['quads']","['dumbbell']",legs
+cable_glute_kickback,Cable Glute Kickback,"['glutes']","","['cable']",legs
+cable_pull_through,Cable Pull-Through,"['glutes', 'hamstrings']","['lower_back']","['cable']",legs
+reverse_hyperextension,Reverse Hyperextension,"['glutes', 'lower_back']","['hamstrings']","['machine']",legs
+box_jump_std,Box Jump,"['quads', 'glutes']","['calves']","['other']",legs
+single_leg_press,Single-Leg Leg Press,"['quads']","['glutes']","['machine']",legs
+shrimp_squat,Shrimp Squat,"['quads', 'glutes']","['core']","['bodyweight']",legs
+wall_sit_std,Wall Sit,"['quads']","['glutes']","['bodyweight']",legs
+cyclist_squat,Cyclist Squat (Heels Elevated),"['quads']","","['dumbbell', 'barbell']",legs
+jefferson_deadlift,Jefferson Deadlift,"['quads', 'glutes']","['back', 'core']","['barbell']",legs
+band_lateral_walk,Lateral Band Walk,"['glute_medius']","['hips']","['band']",legs
+band_clamshell,Banded Clamshell,"['glute_medius']","","['band']",legs
+band_glute_bridge,Banded Glute Bridge,"['glutes']","['hamstrings']","['band']",legs
+kb_goblet_squat,Kettlebell Goblet Squat,"['quads', 'glutes']","['core']","['kettlebell']",legs
+kb_single_leg_deadlift,Kettlebell Single-Leg Deadlift,"['hamstrings', 'glutes']","['core']","['kettlebell']",legs
+smith_squat,Smith Machine Squat,"['quads', 'glutes']","","['machine']",legs

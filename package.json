@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sync-exercises": "node scripts/sync-exercises.mjs",
+    "predev": "node scripts/sync-exercises.mjs",
+    "prebuild": "node scripts/sync-exercises.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

@@ -38,8 +38,24 @@ export function ExerciseLibraryList({ items, selectedIds, onSelect }: Props) {
                 <div className="break-words font-medium leading-snug">
                   {exercise.name}
                 </div>
-                <div className="mt-0.5 text-xs text-neutral-500 dark:text-neutral-400">
-                  {exercise.muscles.join(', ')}
+                <div className="mt-1 flex flex-wrap items-center gap-1">
+                  {exercise.musclesMain.map((m) => (
+                    <span
+                      key={`main-${m}`}
+                      className="inline-flex items-center rounded-full bg-neutral-900 px-1.5 py-0.5 text-[10px] font-medium text-white dark:bg-neutral-100 dark:text-neutral-900"
+                    >
+                      {m.replace(/_/g, ' ')}
+                    </span>
+                  ))}
+                  {exercise.musclesSecondary.map((m) => (
+                    <span
+                      key={`sec-${m}`}
+                      title="Assisting muscle"
+                      className="inline-flex items-center rounded-full border border-neutral-300 px-1.5 py-0.5 text-[10px] text-neutral-500 dark:border-neutral-700 dark:text-neutral-400"
+                    >
+                      +{m.replace(/_/g, ' ')}
+                    </span>
+                  ))}
                 </div>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">

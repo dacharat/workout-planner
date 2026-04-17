@@ -32,8 +32,24 @@ export function ExerciseRow({ day, index, entry }: Props) {
           <div className="break-words text-sm font-medium leading-snug">
             {exercise.name}
           </div>
-          <div className="mt-0.5 text-xs text-neutral-500 dark:text-neutral-400">
-            {exercise.muscles.map(formatLabel).join(' · ')}
+          <div className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-neutral-500 dark:text-neutral-400">
+            {exercise.musclesMain.map((m) => (
+              <span
+                key={`main-${m}`}
+                className="font-medium text-neutral-700 dark:text-neutral-200"
+              >
+                {formatLabel(m)}
+              </span>
+            ))}
+            {exercise.musclesSecondary.map((m) => (
+              <span
+                key={`sec-${m}`}
+                className="text-neutral-400 dark:text-neutral-500"
+                title="Assisting muscle"
+              >
+                +{formatLabel(m)}
+              </span>
+            ))}
           </div>
         </div>
         <button

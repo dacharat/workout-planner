@@ -10,9 +10,11 @@ type Props = {
   selectedEquipment: string[];
   selectedMovement: Movement[];
   selectedMuscle: string[];
+  includeAssisting: boolean;
   onEquipmentChange: (value: string[]) => void;
   onMovementChange: (value: Movement[]) => void;
   onMuscleChange: (value: string[]) => void;
+  onIncludeAssistingChange: (value: boolean) => void;
 };
 
 const chipBase =
@@ -38,9 +40,11 @@ export function FilterBar({
   selectedEquipment,
   selectedMovement,
   selectedMuscle,
+  includeAssisting,
   onEquipmentChange,
   onMovementChange,
   onMuscleChange,
+  onIncludeAssistingChange,
 }: Props) {
   return (
     <div className="space-y-3">
@@ -73,11 +77,22 @@ export function FilterBar({
       <div>
         <div className={sectionLabel}>
           <span>Muscle</span>
-          {selectedMuscle.length > 0 && (
-            <button type="button" className={clearBtn} onClick={() => onMuscleChange([])}>
-              Clear
-            </button>
-          )}
+          <div className="flex items-center gap-3">
+            <label className="flex cursor-pointer items-center gap-1 text-[10px] font-medium normal-case tracking-normal text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200">
+              <input
+                type="checkbox"
+                checked={includeAssisting}
+                onChange={(e) => onIncludeAssistingChange(e.target.checked)}
+                className="h-3 w-3 accent-neutral-900 dark:accent-white"
+              />
+              Include assisting
+            </label>
+            {selectedMuscle.length > 0 && (
+              <button type="button" className={clearBtn} onClick={() => onMuscleChange([])}>
+                Clear
+              </button>
+            )}
+          </div>
         </div>
         <div className="flex flex-wrap gap-1.5">
           {muscleOptions.map((m) => {

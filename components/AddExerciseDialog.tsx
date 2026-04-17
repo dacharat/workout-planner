@@ -27,6 +27,7 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
   const [selectedEquipment, setSelectedEquipment] = useState<string[]>([]);
   const [selectedMovement, setSelectedMovement] = useState<Movement[]>([]);
   const [selectedMuscle, setSelectedMuscle] = useState<string[]>([]);
+  const [includeAssisting, setIncludeAssisting] = useState(false);
   const [query, setQuery] = useState('');
 
   // Reset tab when reopened
@@ -39,8 +40,11 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
       selectedMovement.length > 0
         ? exercises.filter((e) => selectedMovement.includes(e.movement))
         : exercises;
-    return Array.from(new Set(source.flatMap((e) => e.muscles))).sort();
-  }, [selectedMovement]);
+    const muscles = source.flatMap((e) =>
+      includeAssisting ? [...e.musclesMain, ...e.musclesSecondary] : e.musclesMain,
+    );
+    return Array.from(new Set(muscles)).sort();
+  }, [selectedMovement, includeAssisting]);
 
   useEffect(() => {
     if (selectedMuscle.length === 0) return;
@@ -76,20 +80,21 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
         !selectedMovement.includes(e.movement)
       )
         return false;
-      if (
-        selectedMuscle.length > 0 &&
-        !selectedMuscle.some((m) => e.muscles.includes(m))
-      )
-        return false;
+      if (selectedMuscle.length > 0) {
+        const pool = includeAssisting
+          ? [...e.musclesMain, ...e.musclesSecondary]
+          : e.musclesMain;
+        if (!selectedMuscle.some((m) => pool.includes(m))) return false;
+      }
       if (q && !e.name.toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [selectedEquipment, selectedMovement, selectedMuscle, query]);
+  }, [selectedEquipment, selectedMovement, selectedMuscle, includeAssisting, query]);
 
   if (!open) return null;
 
   const handleSelect = (exercise: Exercise) => {
-    addExercise(day, { id: exercise.id, sets: 3, reps: 10 });
+    addExercise(day, { id: exercise.id, sets: 4, reps: 12 });
     onClose();
   };
 
@@ -179,9 +184,11 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
                 selectedEquipment={selectedEquipment}
                 selectedMovement={selectedMovement}
                 selectedMuscle={selectedMuscle}
+                includeAssisting={includeAssisting}
                 onEquipmentChange={setSelectedEquipment}
                 onMovementChange={setSelectedMovement}
                 onMuscleChange={setSelectedMuscle}
+                onIncludeAssistingChange={setIncludeAssisting}
               />
               <ExerciseLibraryList
                 items={filtered}

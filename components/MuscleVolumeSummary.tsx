@@ -7,6 +7,7 @@ import {
   VOLUME_MAX,
   computeMuscleVolume,
   formatMuscleLabel,
+  formatWeighted,
   getStatus,
 } from '@/lib/volume';
 import { BodyMap } from './BodyMap';
@@ -35,8 +36,8 @@ export function MuscleVolumeSummary() {
   const rows = useMemo(
     () =>
       Object.entries(volume)
-        .map(([muscle, sets]) => ({ muscle, sets }))
-        .sort((a, b) => b.sets - a.sets),
+        .map(([muscle, breakdown]) => ({ muscle, ...breakdown }))
+        .sort((a, b) => b.weighted - a.weighted),
     [volume],
   );
 
@@ -65,6 +66,9 @@ export function MuscleVolumeSummary() {
         </div>
         <p className="text-xs text-neutral-500 dark:text-neutral-400">
           Showing: {scopeLabel} · Target 10–20 sets/muscle/week
+        </p>
+        <p className="mt-0.5 text-[10px] text-neutral-400 dark:text-neutral-500">
+          Main muscles count fully; assisting muscles count at half.
         </p>
       </header>
 
@@ -101,17 +105,23 @@ export function MuscleVolumeSummary() {
         </div>
       ) : (
         <ul className="space-y-3">
-          {rows.map(({ muscle, sets }) => {
-            const status = getStatus(sets);
+          {rows.map(({ muscle, main, secondary, weighted }) => {
+            const status = getStatus(weighted);
             const style = STATUS_STYLES[status];
-            const pct = Math.min(100, (sets / VOLUME_MAX) * 100);
+            const pct = Math.min(100, (weighted / VOLUME_MAX) * 100);
+            // Portion of the bar that comes from main vs assist, so users
+            // can see at a glance when a muscle is only being hit indirectly.
+            const mainPct = weighted > 0 ? (main / weighted) * 100 : 0;
             return (
               <li key={muscle}>
                 <div className="mb-1 flex items-center justify-between gap-2 text-xs">
                   <span className="font-medium">{formatMuscleLabel(muscle)}</span>
                   <div className="flex items-center gap-2">
-                    <span className="tabular-nums text-neutral-600 dark:text-neutral-300">
-                      {sets} sets
+                    <span
+                      className="tabular-nums text-neutral-600 dark:text-neutral-300"
+                      title={`${main} main + ${secondary} assist × 0.5 = ${formatWeighted(weighted)}`}
+                    >
+                      {formatWeighted(weighted)} sets
                     </span>
                     <span
                       className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${style.badge}`}
@@ -120,12 +130,23 @@ export function MuscleVolumeSummary() {
                     </span>
                   </div>
                 </div>
-                <div className="h-2 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+                <div className="relative h-2 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+                  {/* Assist portion: full color at reduced opacity */}
                   <div
-                    className={`h-full rounded-full transition-[width] ${style.bar}`}
+                    className={`absolute inset-y-0 left-0 ${style.bar} opacity-40`}
                     style={{ width: `${pct}%` }}
                   />
+                  {/* Main portion overlaid on top at full opacity */}
+                  <div
+                    className={`absolute inset-y-0 left-0 ${style.bar}`}
+                    style={{ width: `${(pct * mainPct) / 100}%` }}
+                  />
                 </div>
+                {secondary > 0 && (
+                  <div className="mt-0.5 text-[10px] text-neutral-400 dark:text-neutral-500">
+                    {main} direct · {secondary} assist
+                  </div>
+                )}
               </li>
             );
           })}
