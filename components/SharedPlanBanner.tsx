@@ -7,6 +7,7 @@ import {
   readSharedPlanFromUrl,
 } from '@/lib/share';
 import { DAYS } from '@/lib/constants';
+import { trackEvent } from '@/lib/analytics';
 
 export function SharedPlanBanner() {
   const { hydrate } = usePlan();
@@ -14,7 +15,14 @@ export function SharedPlanBanner() {
 
   useEffect(() => {
     const shared = readSharedPlanFromUrl();
-    if (shared) setPending(shared);
+    if (shared) {
+      setPending(shared);
+      const exerciseCount = DAYS.reduce(
+        (sum, d) => sum + shared.days[d].length,
+        0,
+      );
+      trackEvent('shared_link_visit', { exerciseCount });
+    }
   }, []);
 
   if (!pending) return null;

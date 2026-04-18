@@ -23,6 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="2ca29c2b-fa94-44ee-9eb2-07db7a620279"
+        />
       </head>
       <body>
         <PlanProvider>{children}</PlanProvider>

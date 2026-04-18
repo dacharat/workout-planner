@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import { usePlan } from '@/lib/plan-context';
 import { downloadPlanCsv } from '@/lib/csv';
+import { trackEvent } from '@/lib/analytics';
 import { buildShareUrl } from '@/lib/share';
 
 export function Header() {
@@ -34,6 +35,7 @@ export function Header() {
 
   const handleExport = () => {
     downloadPlanCsv(plan, restDays);
+    trackEvent('export_csv');
     setMenuOpen(false);
   };
 
@@ -47,8 +49,10 @@ export function Header() {
       const url = buildShareUrl(state);
       await navigator.clipboard.writeText(url);
       setShareStatus('copied');
+      trackEvent('share_click');
     } catch {
       setShareStatus('error');
+      trackEvent('share_click_error');
     } finally {
       setTimeout(() => setShareStatus('idle'), 2000);
     }
