@@ -49,3 +49,25 @@ band_glute_bridge,Banded Glute Bridge,"['glutes']","['hamstrings']","['band']",l
 kb_goblet_squat,Kettlebell Goblet Squat,"['quads', 'glutes']","['core']","['kettlebell']",legs
 kb_single_leg_deadlift,Kettlebell Single-Leg Deadlift,"['hamstrings', 'glutes']","['core']","['kettlebell']",legs
 smith_squat,Smith Machine Squat,"['quads', 'glutes']","","['machine']",legs
+belt_squat,Belt Squat,"['quads', 'glutes']","['core']","['machine']",legs
+ssb_squat,Safety Squat Bar Squat,"['quads', 'glutes']","['upper_back', 'core']","['barbell']",legs
+pause_back_squat,Pause Back Squat,"['quads', 'glutes']","['core', 'lower_back']","['barbell']",legs
+anderson_squat,Anderson Squat (Pin Squat),"['quads', 'glutes']","['core']","['barbell']",legs
+split_squat_db,Dumbbell Split Squat,"['quads', 'glutes']","['hamstrings', 'core']","['dumbbell']",legs
+cossack_squat_db,Cossack Squat,"['adductors', 'quads']","['glutes', 'hamstrings']","['dumbbell']",legs
+ghr_std,Glute Ham Raise,"['hamstrings', 'glutes']","['lower_back', 'calves']","['bodyweight']",legs
+single_leg_rdl_db,Single Leg Romanian Deadlift,"['hamstrings', 'glutes']","['core']","['dumbbell']",legs
+back_ext_45,45 Degree Back Extension,"['lower_back', 'glutes']","['hamstrings']","['machine']",legs
+jefferson_curl_db,Jefferson Curl,"['hamstrings', 'lower_back']","['core']","['dumbbell']",legs
+single_leg_hip_thrust,Single Leg Hip Thrust,"['glutes']","['hamstrings', 'core']","['bodyweight']",legs
+b_stance_hip_thrust_bb,B-Stance Hip Thrust,"['glutes']","['hamstrings']","['barbell']",legs
+frog_pump,Frog Pump,"['glutes']","['hamstrings']","['bodyweight']",legs
+kas_glute_bridge_bb,Kas Glute Bridge,"['glutes']","['hamstrings']","['barbell']",legs
+sled_push,Sled Push / Prowler,"['quads', 'glutes']","['calves', 'cardio']","['other']",legs
+deficit_reverse_lunge_db,Deficit Reverse Lunge,"['quads', 'glutes']","['hamstrings']","['dumbbell']",legs
+single_leg_calf_raise_db,Single Leg Dumbbell Calf Raise,"['calves']","['stability']","['dumbbell']",legs
+machine_glute_kickback,Machine Glute Kickback,"['glutes']","['hamstrings']","['machine']",legs
+single_leg_glute_bridge,Single Leg Glute Bridge (Floor),"['glutes']","['hamstrings', 'core']","['bodyweight']",legs
+bw_standing_ham_curl,Bodyweight Standing Hamstring Curl,"['hamstrings']","['glutes']","['bodyweight']",legs
+smith_rdl,Smith Machine Romanian Deadlift,"['hamstrings', 'glutes']","['lower_back']","['machine']",legs
+landmine_staggered_rdl,Landmine Staggered Stance RDL,"['hamstrings', 'glutes']","['core', 'lower_back']","['barbell']",legs

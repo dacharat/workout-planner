@@ -99,3 +99,56 @@ export function formatMuscleLabel(muscle: string): string {
 export function formatWeighted(n: number): string {
   return Number.isInteger(n) ? String(n) : n.toFixed(1);
 }
+
+/** High-level muscle groups for the chart view. Values are dataset muscle keys. */
+export const MUSCLE_GROUPS: { label: string; muscles: string[] }[] = [
+  {
+    label: 'Chest',
+    muscles: ['chest', 'upper_chest', 'lower_chest', 'serratus_anterior'],
+  },
+  {
+    label: 'Back',
+    muscles: ['back', 'upper_back', 'lower_back', 'lats', 'lat', 'traps', 'mid_traps', 'rhomboids'],
+  },
+  {
+    label: 'Shoulders',
+    muscles: ['shoulders', 'rear_delts', 'rear_deltoids', 'front_delts', 'side_delts'],
+  },
+  {
+    label: 'Arms',
+    muscles: ['biceps', 'triceps', 'forearms', 'brachialis'],
+  },
+  {
+    label: 'Legs',
+    muscles: [
+      'quads',
+      'hamstrings',
+      'glutes',
+      'glute_medius',
+      'calves',
+      'adductors',
+      'abductors',
+      'inner_thigh',
+      'tibialis_anterior',
+    ],
+  },
+  {
+    label: 'Core',
+    muscles: ['abs', 'lower_abs', 'core', 'obliques'],
+  },
+];
+
+/** Volume target range (weighted sets/week) — applies to every muscle group. */
+export const VOLUME_TARGET: [number, number] = [10, 20];
+
+/** Sum weighted volume across the muscles in a group. */
+export function computeGroupVolume(
+  volume: Record<string, MuscleBreakdown>,
+  muscles: string[],
+): number {
+  let total = 0;
+  for (const m of muscles) {
+    total += volume[m]?.weighted ?? 0;
+  }
+  return total;
+}

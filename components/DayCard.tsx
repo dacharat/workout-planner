@@ -18,16 +18,21 @@ export function DayCard({ day }: Props) {
   return (
     <>
       <article
-        className={`flex flex-col rounded-2xl border p-4 shadow-sm transition ${
+        className={`flex min-h-[320px] flex-col rounded-2xl border p-4 transition ${
           isRest
-            ? 'border-dashed border-neutral-300 bg-neutral-100/50 dark:border-neutral-700 dark:bg-neutral-900/40'
-            : 'border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900'
+            ? 'border-dashed border-line bg-panel-2/50'
+            : 'border-line bg-panel'
         }`}
       >
         <header className="mb-3 flex items-baseline justify-between">
           <div>
-            <h2 className="text-sm font-semibold">{DAY_LABELS[day]}</h2>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            <div className="font-mono text-[10px] tracking-[0.14em] text-fg-dim">
+              {day.toUpperCase()}
+            </div>
+            <h2 className="font-display text-base font-semibold leading-tight tracking-tight text-fg">
+              {DAY_LABELS[day]}
+            </h2>
+            <p className="mt-0.5 text-[11px] text-fg-muted">
               {isRest
                 ? 'Rest day'
                 : `${entries.length} ${entries.length === 1 ? 'exercise' : 'exercises'} · ${totalSets} sets`}
@@ -37,7 +42,7 @@ export function DayCard({ day }: Props) {
             <button
               type="button"
               onClick={() => clearDay(day)}
-              className="text-xs text-neutral-500 transition hover:text-rose-600 dark:text-neutral-400 dark:hover:text-rose-400"
+              className="text-[11px] text-fg-dim transition hover:text-danger"
             >
               Clear
             </button>
@@ -45,17 +50,18 @@ export function DayCard({ day }: Props) {
         </header>
 
         {isRest ? (
-          <div className="flex flex-1 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 p-6 text-center dark:border-neutral-700">
+          <div className="flex flex-1 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-line p-6 text-center">
             <span className="text-2xl" aria-hidden>
               💤
             </span>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            <p className="text-[11px] text-fg-muted">
               Taking it easy today.
               {entries.length > 0 && (
                 <>
                   <br />
-                  <span className="text-[10px]">
-                    ({entries.length} saved {entries.length === 1 ? 'exercise' : 'exercises'} hidden)
+                  <span className="text-[10px] text-fg-dim">
+                    ({entries.length} saved{' '}
+                    {entries.length === 1 ? 'exercise' : 'exercises'} hidden)
                   </span>
                 </>
               )}
@@ -64,7 +70,7 @@ export function DayCard({ day }: Props) {
         ) : (
           <div className="flex-1 space-y-2">
             {entries.length === 0 ? (
-              <div className="rounded-lg border border-dashed border-neutral-300 p-4 text-center text-xs text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+              <div className="rounded-lg border border-dashed border-line p-4 text-center text-[11px] text-fg-muted">
                 No exercises yet — add one or mark as rest day.
               </div>
             ) : (
@@ -80,7 +86,7 @@ export function DayCard({ day }: Props) {
             <button
               type="button"
               onClick={() => setDialogOpen(true)}
-              className="inline-flex h-9 flex-1 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-sm font-medium text-neutral-700 transition hover:border-neutral-900 hover:bg-white dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:border-white dark:hover:bg-neutral-800"
+              className="inline-flex h-9 flex-1 items-center justify-center rounded-lg border border-line bg-panel-2 text-[13px] font-medium text-fg transition hover:border-line-2"
             >
               + Add exercise
             </button>
@@ -88,12 +94,12 @@ export function DayCard({ day }: Props) {
           <button
             type="button"
             onClick={() => toggleRest(day)}
-            className={`inline-flex h-9 items-center justify-center rounded-lg border px-3 text-sm font-medium transition ${
-              isRest
-                ? 'flex-1 border-neutral-900 bg-neutral-900 text-white hover:bg-neutral-800 dark:border-white dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200'
-                : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:text-neutral-100'
-            }`}
             aria-pressed={isRest}
+            className={`inline-flex h-9 items-center justify-center rounded-lg border px-3 text-[13px] font-medium transition ${
+              isRest
+                ? 'flex-1 border-accent bg-accent text-accent-ink'
+                : 'border-line bg-panel-2 text-fg-muted hover:text-fg'
+            }`}
           >
             {isRest ? 'Resume training' : 'Rest day'}
           </button>

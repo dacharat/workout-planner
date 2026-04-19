@@ -11,7 +11,7 @@ type Props = {
 export function ExerciseLibraryList({ items, selectedIds, onSelect }: Props) {
   if (items.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-neutral-300 p-6 text-center text-sm text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+      <div className="rounded-lg border border-dashed border-line p-6 text-center text-sm text-fg-muted">
         No exercises match the selected filters.
       </div>
     );
@@ -30,19 +30,19 @@ export function ExerciseLibraryList({ items, selectedIds, onSelect }: Props) {
               aria-disabled={isSelected}
               className={`flex w-full items-start justify-between gap-3 rounded-lg border p-3 text-left text-sm transition ${
                 isSelected
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 opacity-60 dark:border-neutral-800 dark:bg-neutral-900/50'
-                  : 'border-neutral-200 bg-white hover:border-neutral-900 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-white dark:hover:bg-neutral-800'
+                  ? 'cursor-not-allowed border-line bg-panel-2 opacity-60'
+                  : 'border-line bg-panel-2 hover:border-line-2 hover:bg-panel-3'
               }`}
             >
               <div className="min-w-0 flex-1">
-                <div className="break-words font-medium leading-snug">
+                <div className="break-words font-medium leading-snug text-fg">
                   {exercise.name}
                 </div>
                 <div className="mt-1 flex flex-wrap items-center gap-1">
                   {exercise.musclesMain.map((m) => (
                     <span
                       key={`main-${m}`}
-                      className="inline-flex items-center rounded-full bg-neutral-900 px-1.5 py-0.5 text-[10px] font-medium text-white dark:bg-neutral-100 dark:text-neutral-900"
+                      className="inline-flex items-center rounded-full bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-ink"
                     >
                       {m.replace(/_/g, ' ')}
                     </span>
@@ -51,7 +51,7 @@ export function ExerciseLibraryList({ items, selectedIds, onSelect }: Props) {
                     <span
                       key={`sec-${m}`}
                       title="Assisting muscle"
-                      className="inline-flex items-center rounded-full border border-neutral-300 px-1.5 py-0.5 text-[10px] text-neutral-500 dark:border-neutral-700 dark:text-neutral-400"
+                      className="inline-flex items-center rounded-full border border-line px-1.5 py-0.5 text-[10px] text-fg-muted"
                     >
                       +{m.replace(/_/g, ' ')}
                     </span>
@@ -60,15 +60,18 @@ export function ExerciseLibraryList({ items, selectedIds, onSelect }: Props) {
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">
                 {isSelected ? (
-                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
+                  <span
+                    className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
+                    style={{ background: 'var(--accent-soft)', color: 'var(--accent)' }}
+                  >
                     Selected
                   </span>
                 ) : (
-                  <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+                  <span className="rounded-full bg-panel-3 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-fg-muted">
                     {exercise.movement}
                   </span>
                 )}
-                <span className="text-[10px] text-neutral-500 dark:text-neutral-400">
+                <span className="text-[10px] text-fg-dim">
                   {exercise.equipment.join(' / ')}
                 </span>
               </div>

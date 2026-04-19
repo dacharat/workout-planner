@@ -8,7 +8,16 @@
       "Bash(node -e \"const {exercises}=require\\('./data/exercises.ts'\\)\")",
       "Bash(node scripts/sync-exercises.mjs)",
       "Bash(rm data/exercise.csv)",
-      "Bash(yarn sync-exercises *)"
+      "Bash(yarn sync-exercises *)",
+      "Bash(node -e ' *)",
+      "Bash(yarn lint *)",
+      "Bash(yarn dev *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/workout-planner/)",
+      "Bash(kill %1)",
+      "Bash(taskkill //F //IM node.exe)"
     ]
   }
 }

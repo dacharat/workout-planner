@@ -30,7 +30,6 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
   const [includeAssisting, setIncludeAssisting] = useState(false);
   const [query, setQuery] = useState('');
 
-  // Reset tab when reopened
   useEffect(() => {
     if (open) setTab('library');
   }, [open]);
@@ -101,34 +100,36 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
   const tabClass = (active: boolean) =>
     `inline-flex h-8 items-center rounded-md px-3 text-xs font-medium transition ${
       active
-        ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
-        : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800'
+        ? 'bg-accent text-accent-ink'
+        : 'text-fg-muted hover:bg-panel-3'
     }`;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4"
+      className="library-backdrop fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-0 backdrop-blur-sm sm:items-center sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-label={`Add exercise to ${DAY_LABELS[day]}`}
       onClick={onClose}
     >
       <div
-        className="flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-neutral-200 bg-white shadow-xl dark:border-neutral-800 dark:bg-neutral-950 sm:rounded-2xl"
+        className="library-modal flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-line bg-panel shadow-xl sm:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between border-b border-neutral-200 px-5 py-4 dark:border-neutral-800">
+        <div className="flex items-center justify-between border-b border-line px-5 py-4">
           <div>
-            <h2 className="text-base font-semibold">Add exercise</h2>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            <div className="font-mono text-[10px] tracking-[0.14em] text-fg-dim">
+              ADD EXERCISE
+            </div>
+            <h2 className="font-display text-lg font-semibold tracking-tight text-fg">
               {DAY_LABELS[day]}
-            </p>
+            </h2>
           </div>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-fg-muted hover:bg-panel-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +148,7 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
         <div
           role="tablist"
           aria-label="Add exercise source"
-          className="flex gap-1 border-b border-neutral-200 bg-neutral-50/50 px-5 py-2 dark:border-neutral-800 dark:bg-neutral-900/50"
+          className="flex gap-1 border-b border-line bg-panel-2 px-5 py-2"
         >
           <button
             type="button"
@@ -176,7 +177,7 @@ export function AddExerciseDialog({ day, open, onClose }: Props) {
                 placeholder="Search exercises..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="h-10 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:ring-neutral-300"
+                className="h-10 w-full rounded-lg border border-line bg-panel-2 px-3 text-sm text-fg placeholder:text-fg-dim focus:outline-none focus:ring-2 focus:ring-accent"
               />
               <FilterBar
                 equipmentOptions={equipmentOptions}

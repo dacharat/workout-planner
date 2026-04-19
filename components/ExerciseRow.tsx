@@ -21,30 +21,29 @@ export function ExerciseRow({ day, index, entry }: Props) {
     e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const raw = Number(e.target.value);
-    const value = Number.isFinite(raw) ? Math.max(1, Math.min(99, Math.floor(raw))) : 1;
+    const value = Number.isFinite(raw)
+      ? Math.max(1, Math.min(99, Math.floor(raw)))
+      : 1;
     updateEntry(day, index, { [field]: value });
   };
 
   return (
-    <div className="group rounded-lg border border-neutral-200 bg-neutral-50 p-2.5 text-sm dark:border-neutral-800 dark:bg-neutral-900/60">
+    <div className="group rounded-lg border border-line bg-panel-2 p-2.5 text-sm">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
-          <div className="break-words text-sm font-medium leading-snug">
+          <div className="break-words text-[13px] font-medium leading-snug text-fg">
             {exercise.name}
           </div>
-          <div className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-neutral-500 dark:text-neutral-400">
+          <div className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-fg-muted">
             {exercise.musclesMain.map((m) => (
-              <span
-                key={`main-${m}`}
-                className="font-medium text-neutral-700 dark:text-neutral-200"
-              >
+              <span key={`main-${m}`} className="font-medium text-fg">
                 {formatLabel(m)}
               </span>
             ))}
             {exercise.musclesSecondary.map((m) => (
               <span
                 key={`sec-${m}`}
-                className="text-neutral-400 dark:text-neutral-500"
+                className="text-fg-dim"
                 title="Assisting muscle"
               >
                 +{formatLabel(m)}
@@ -56,7 +55,7 @@ export function ExerciseRow({ day, index, entry }: Props) {
           type="button"
           onClick={() => removeExercise(day, index)}
           aria-label={`Remove ${exercise.name}`}
-          className="-mr-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-neutral-400 transition hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-900/30 dark:hover:text-rose-400"
+          className="-mr-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-fg-dim transition hover:bg-panel-3 hover:text-danger"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +71,7 @@ export function ExerciseRow({ day, index, entry }: Props) {
           </svg>
         </button>
       </div>
-      <div className="mt-2 flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
+      <div className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] text-fg-muted">
         <label className="flex items-center gap-1">
           <span>Sets</span>
           <input
@@ -81,11 +80,11 @@ export function ExerciseRow({ day, index, entry }: Props) {
             max={99}
             value={entry.sets}
             onChange={(e) => handleNumberChange('sets', e)}
-            className="h-7 w-12 rounded-md border border-neutral-300 bg-white px-1 text-center text-sm text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:ring-neutral-300"
+            className="h-7 w-10 rounded-md border border-line bg-panel px-1 text-center text-[13px] text-fg focus:outline-none focus:ring-2 focus:ring-accent"
             aria-label="Sets"
           />
         </label>
-        <span className="text-neutral-400">×</span>
+        <span className="text-fg-dim">×</span>
         <label className="flex items-center gap-1">
           <span>Reps</span>
           <input
@@ -94,7 +93,7 @@ export function ExerciseRow({ day, index, entry }: Props) {
             max={99}
             value={entry.reps}
             onChange={(e) => handleNumberChange('reps', e)}
-            className="h-7 w-12 rounded-md border border-neutral-300 bg-white px-1 text-center text-sm text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:ring-neutral-300"
+            className="h-7 w-10 rounded-md border border-line bg-panel px-1 text-center text-[13px] text-fg focus:outline-none focus:ring-2 focus:ring-accent"
             aria-label="Reps"
           />
         </label>

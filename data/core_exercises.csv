@@ -39,3 +39,24 @@ copenhagen_plank,Copenhagen Plank,"['obliques', 'adductors']","['core']","['body
 suitcase_carry_db,Suitcase Carry,"['obliques', 'core']","['forearms']","['dumbbell']",core
 overhead_carry_db,Overhead DB Carry,"['shoulders', 'core']","","['dumbbell']",core
 captain_chair_leg_raise,Captain's Chair Leg Raise,"['abs']","['hip_flexors']","['machine']",core
+decline_sit_up_weighted,Weighted Decline Sit-Up,"['abs']","['hip_flexors']","['plate', 'dumbbell']",core
+cable_side_bend,Cable Side Bend,"['obliques']","['core']","['cable']",core
+oblique_v_up,Oblique V-Up,"['obliques']","['abs']","['bodyweight']",core
+lying_leg_raise,Lying Leg Raise,"['lower_abs']","['hip_flexors']","['bodyweight']",core
+scissor_kicks,Scissor Kicks,"['lower_abs']","['hip_flexors', 'core']","['bodyweight']",core
+jackknife_std,Jackknife,"['abs']","['hip_flexors']","['bodyweight']",core
+body_saw_plank,Body Saw Plank,"['abs', 'core']","['shoulders']","['bodyweight']",core
+stir_the_pot_sb,Stir the Pot (Stability Ball),"['core', 'abs']","['shoulders']","['other']",core
+sb_pike,Stability Ball Pike,"['abs', 'core']","['shoulders']","['other']",core
+sb_rollout,Stability Ball Rollout,"['abs', 'core']","['lats', 'shoulders']","['other']",core
+plank_to_push_up,Plank to Push-Up,"['core', 'abs']","['shoulders', 'triceps']","['bodyweight']",core
+reverse_plank_std,Reverse Plank,"['core', 'glutes']","['shoulders', 'hamstrings']","['bodyweight']",core
+standing_cable_crunch,Standing Cable Crunch,"['abs']","['core']","['cable']",core
+med_ball_slam,Medicine Ball Slam,"['abs', 'core']","['shoulders', 'lats']","['other']",core
+med_ball_rotational_throw,Medicine Ball Rotational Throw,"['obliques', 'core']","['shoulders']","['other']",core
+weighted_plank,Weighted Plank,"['abs', 'core']","['shoulders']","['bodyweight', 'plate']",core
+bb_ab_rollout,Barbell Ab Rollout,"['abs']","['core', 'lats']","['barbell']",core
+ab_coaster_machine,Ab Coaster Machine,"['abs']","['obliques']","['machine']",core
+cable_std_russian_twist,Cable Standing Russian Twist,"['obliques']","['abs', 'core']","['cable']",core
+kb_side_bend,Kettlebell Side Bend,"['obliques']","['core']","['kettlebell']",core
+db_v_sit,Dumbbell V-Sit,"['abs']","['hip_flexors']","['dumbbell']",core

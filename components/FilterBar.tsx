@@ -19,16 +19,14 @@ type Props = {
 
 const chipBase =
   'inline-flex h-7 items-center rounded-full border px-3 text-xs font-medium transition';
-const chipInactive =
-  'border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800';
-const chipActive =
-  'border-neutral-900 bg-neutral-900 text-white dark:border-white dark:bg-white dark:text-neutral-900';
+const chipInactive = 'border-line bg-panel-2 text-fg hover:bg-panel-3';
+const chipActive = 'border-accent bg-accent text-accent-ink';
 
 const sectionLabel =
-  'mb-1.5 flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400';
+  'mb-1.5 flex items-center justify-between font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-fg-dim';
 
 const clearBtn =
-  'text-[10px] font-medium normal-case tracking-normal text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200';
+  'text-[10px] font-medium normal-case tracking-normal text-fg-dim hover:text-fg';
 
 function toggle<T>(arr: T[], value: T): T[] {
   return arr.includes(value) ? arr.filter((v) => v !== value) : [...arr, value];
@@ -78,12 +76,12 @@ export function FilterBar({
         <div className={sectionLabel}>
           <span>Muscle</span>
           <div className="flex items-center gap-3">
-            <label className="flex cursor-pointer items-center gap-1 text-[10px] font-medium normal-case tracking-normal text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200">
+            <label className="flex cursor-pointer items-center gap-1 text-[10px] font-medium normal-case tracking-normal text-fg-muted hover:text-fg">
               <input
                 type="checkbox"
                 checked={includeAssisting}
                 onChange={(e) => onIncludeAssistingChange(e.target.checked)}
-                className="h-3 w-3 accent-neutral-900 dark:accent-white"
+                className="h-3 w-3 accent-[var(--accent)]"
               />
               Include assisting
             </label>

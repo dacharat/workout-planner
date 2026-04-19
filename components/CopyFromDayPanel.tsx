@@ -18,9 +18,7 @@ export function CopyFromDayPanel({ targetDay, onDone }: Props) {
     [plan, targetDay],
   );
 
-  const sourceDays = DAYS.filter(
-    (d) => d !== targetDay && plan[d].length > 0,
-  );
+  const sourceDays = DAYS.filter((d) => d !== targetDay && plan[d].length > 0);
 
   const handleCopyOne = (entry: ExerciseEntry) => {
     if (targetIds.has(entry.id)) return;
@@ -39,7 +37,7 @@ export function CopyFromDayPanel({ targetDay, onDone }: Props) {
 
   if (sourceDays.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-neutral-300 p-6 text-center text-xs text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+      <div className="rounded-lg border border-dashed border-line p-6 text-center text-xs text-fg-muted">
         No other day has exercises yet. Add some to another day first, then come
         back to copy.
       </div>
@@ -56,19 +54,19 @@ export function CopyFromDayPanel({ targetDay, onDone }: Props) {
         return (
           <section
             key={day}
-            className="rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-neutral-800 dark:bg-neutral-900/50"
+            className="rounded-lg border border-line bg-panel-2 p-3"
           >
             <header className="mb-2 flex items-center justify-between gap-2">
               <div className="min-w-0">
-                <h3 className="truncate text-sm font-semibold">
+                <h3 className="truncate text-sm font-semibold text-fg">
                   {DAY_LABELS[day]}
                   {isRest && (
-                    <span className="ml-2 rounded bg-neutral-200 px-1.5 py-0.5 text-[10px] font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+                    <span className="ml-2 rounded bg-panel-3 px-1.5 py-0.5 text-[10px] font-medium text-fg-muted">
                       Rest
                     </span>
                   )}
                 </h3>
-                <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                <p className="text-xs text-fg-muted">
                   {entries.length} exercises · {totalSets} sets
                 </p>
               </div>
@@ -76,7 +74,7 @@ export function CopyFromDayPanel({ targetDay, onDone }: Props) {
                 type="button"
                 onClick={() => handleCopyAll(day)}
                 disabled={copyable.length === 0}
-                className="inline-flex h-8 items-center rounded-md bg-neutral-900 px-3 text-xs font-medium text-white transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-500 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 dark:disabled:bg-neutral-800 dark:disabled:text-neutral-500"
+                className="inline-flex h-8 items-center rounded-md bg-accent px-3 text-xs font-medium text-accent-ink transition disabled:cursor-not-allowed disabled:bg-panel-3 disabled:text-fg-dim"
               >
                 Copy all ({copyable.length})
               </button>
@@ -93,21 +91,25 @@ export function CopyFromDayPanel({ targetDay, onDone }: Props) {
                       type="button"
                       onClick={() => handleCopyOne(entry)}
                       disabled={already}
-                      className="flex w-full items-center justify-between gap-2 rounded-md border border-transparent bg-white px-2 py-1.5 text-left text-xs transition hover:border-neutral-300 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-transparent disabled:hover:bg-white dark:bg-neutral-950 dark:hover:border-neutral-700 dark:hover:bg-neutral-900 dark:disabled:hover:bg-neutral-950"
+                      className="flex w-full items-center justify-between gap-2 rounded-md border border-transparent bg-panel px-2 py-1.5 text-left text-xs text-fg transition hover:border-line hover:bg-panel-3 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-transparent disabled:hover:bg-panel"
                     >
                       <span className="truncate">{name}</span>
                       <span className="flex shrink-0 items-center gap-2">
-                        <span className="text-neutral-500 dark:text-neutral-400">
+                        <span className="text-fg-muted">
                           {entry.sets}×{entry.reps}
                         </span>
                         {already ? (
-                          <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
+                          <span
+                            className="rounded px-1.5 py-0.5 text-[10px] font-medium"
+                            style={{
+                              background: 'var(--accent-soft)',
+                              color: 'var(--accent)',
+                            }}
+                          >
                             Already added
                           </span>
                         ) : (
-                          <span className="text-neutral-400 dark:text-neutral-500">
-                            +
-                          </span>
+                          <span className="text-fg-dim">+</span>
                         )}
                       </span>
                     </button>

@@ -1276,6 +1276,383 @@ export const exercises: Exercise[] = [
     "movement": "push"
   },
   {
+    "id": "cable_crossover_std",
+    "name": "Standing Cable Crossover",
+    "musclesMain": [
+      "chest"
+    ],
+    "musclesSecondary": [
+      "shoulders"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "neutral_grip_db_press",
+    "name": "Neutral Grip Dumbbell Bench Press",
+    "musclesMain": [
+      "chest"
+    ],
+    "musclesSecondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "board_press_bb",
+    "name": "Board Press",
+    "musclesMain": [
+      "chest"
+    ],
+    "musclesSecondary": [
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "larsen_press_bb",
+    "name": "Larsen Press",
+    "musclesMain": [
+      "chest"
+    ],
+    "musclesSecondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "guillotine_press_bb",
+    "name": "Guillotine Press",
+    "musclesMain": [
+      "upper_chest"
+    ],
+    "musclesSecondary": [
+      "shoulders",
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "cable_chest_press_std",
+    "name": "Standing Cable Chest Press",
+    "musclesMain": [
+      "chest"
+    ],
+    "musclesSecondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "z_press_bb",
+    "name": "Barbell Z Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "core",
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "z_press_db",
+    "name": "Dumbbell Z Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "core",
+      "triceps"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "bradford_press_bb",
+    "name": "Bradford Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "behind_neck_press_bb",
+    "name": "Behind the Neck Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "traps",
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "viking_press_landmine",
+    "name": "Landmine Viking Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "triceps",
+      "core"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "half_kneeling_landmine_press",
+    "name": "Half-Kneeling Landmine Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "core",
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "cable_front_raise",
+    "name": "Cable Front Raise",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "upper_chest"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "cable_upright_row",
+    "name": "Cable Upright Row",
+    "musclesMain": [
+      "traps",
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "biceps"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "tate_press_db",
+    "name": "Tate Press",
+    "musclesMain": [
+      "triceps"
+    ],
+    "musclesSecondary": [
+      "chest"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "california_press_db",
+    "name": "California Press",
+    "musclesMain": [
+      "triceps"
+    ],
+    "musclesSecondary": [
+      "chest",
+      "shoulders"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "rolling_tricep_ext_db",
+    "name": "Rolling Dumbbell Tricep Extension",
+    "musclesMain": [
+      "triceps"
+    ],
+    "musclesSecondary": [
+      "shoulders"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "ring_dips",
+    "name": "Ring Dips",
+    "musclesMain": [
+      "chest",
+      "triceps"
+    ],
+    "musclesSecondary": [
+      "shoulders",
+      "stability"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "ez_bar_shoulder_press",
+    "name": "EZ-Bar Shoulder Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "reverse_grip_ohp_bb",
+    "name": "Reverse Grip Barbell Shoulder Press",
+    "musclesMain": [
+      "shoulders",
+      "upper_chest"
+    ],
+    "musclesSecondary": [
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "wide_grip_bench_bb",
+    "name": "Wide Grip Barbell Bench Press",
+    "musclesMain": [
+      "chest"
+    ],
+    "musclesSecondary": [
+      "shoulders",
+      "triceps"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "reverse_grip_bench_db",
+    "name": "Reverse Grip Dumbbell Bench Press",
+    "musclesMain": [
+      "upper_chest"
+    ],
+    "musclesSecondary": [
+      "triceps"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "single_arm_shoulder_press_db",
+    "name": "Single Arm Dumbbell Shoulder Press",
+    "musclesMain": [
+      "shoulders"
+    ],
+    "musclesSecondary": [
+      "triceps",
+      "core"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "cable_cross_body_tricep_ext",
+    "name": "Cable Cross-Body Tricep Extension",
+    "musclesMain": [
+      "triceps"
+    ],
+    "musclesSecondary": [],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "db_cross_body_oh_tricep_ext",
+    "name": "Dumbbell Cross-Body Overhead Tricep Extension",
+    "musclesMain": [
+      "triceps"
+    ],
+    "musclesSecondary": [],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
+    "id": "prone_db_shoulder_press",
+    "name": "Prone Dumbbell Shoulder Press",
+    "musclesMain": [
+      "rear_delts",
+      "upper_back"
+    ],
+    "musclesSecondary": [
+      "traps"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "push"
+  },
+  {
     "id": "deadlift_conv",
     "name": "Conventional Deadlift",
     "musclesMain": [
@@ -2335,6 +2712,403 @@ export const exercises: Exercise[] = [
     "movement": "pull"
   },
   {
+    "id": "chest_supported_row_machine",
+    "name": "Chest Supported Machine Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "chest_supported_row_db",
+    "name": "Chest Supported Dumbbell Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "yates_row_bb",
+    "name": "Yates Row (Underhand Bent Over)",
+    "musclesMain": [
+      "back",
+      "biceps"
+    ],
+    "musclesSecondary": [
+      "forearms"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "hs_high_row",
+    "name": "Hammer Strength High Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "hs_low_row",
+    "name": "Hammer Strength Low Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "landmine_row_single",
+    "name": "Single Arm Landmine Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "core"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "smith_row",
+    "name": "Smith Machine Bent Over Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "neutral_grip_pulldown",
+    "name": "Neutral Grip Lat Pulldown",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "brachialis"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "close_grip_pulldown",
+    "name": "Close Grip Lat Pulldown",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "commando_pull_up",
+    "name": "Commando Pull-Up",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "core"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "drag_curl_bb",
+    "name": "Drag Curl",
+    "musclesMain": [
+      "biceps"
+    ],
+    "musclesSecondary": [
+      "forearms"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "waiter_curl_db",
+    "name": "Waiter Curl",
+    "musclesMain": [
+      "biceps"
+    ],
+    "musclesSecondary": [
+      "forearms"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "plate_curl_std",
+    "name": "Plate Curl",
+    "musclesMain": [
+      "biceps",
+      "forearms"
+    ],
+    "musclesSecondary": [],
+    "equipment": [
+      "plate"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "rope_hammer_curl_cable",
+    "name": "Cable Rope Hammer Curl",
+    "musclesMain": [
+      "biceps",
+      "forearms"
+    ],
+    "musclesSecondary": [
+      "brachialis"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "seated_db_curl",
+    "name": "Seated Dumbbell Curl",
+    "musclesMain": [
+      "biceps"
+    ],
+    "musclesSecondary": [
+      "forearms"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "cable_reverse_fly",
+    "name": "Cable Reverse Fly",
+    "musclesMain": [
+      "rear_delts"
+    ],
+    "musclesSecondary": [
+      "upper_back"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "prone_y_raise",
+    "name": "Prone Y Raise",
+    "musclesMain": [
+      "rear_delts",
+      "traps"
+    ],
+    "musclesSecondary": [
+      "upper_back"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "reverse_wrist_curl_bb",
+    "name": "Reverse Barbell Wrist Curl",
+    "musclesMain": [
+      "forearms"
+    ],
+    "musclesSecondary": [],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "zercher_deadlift_bb",
+    "name": "Barbell Zercher Deadlift",
+    "musclesMain": [
+      "glutes",
+      "quads"
+    ],
+    "musclesSecondary": [
+      "upper_back",
+      "core"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "deadlift_db",
+    "name": "Dumbbell Deadlift",
+    "musclesMain": [
+      "glutes",
+      "hamstrings"
+    ],
+    "musclesSecondary": [
+      "lower_back",
+      "forearms"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "suitcase_deadlift_bb",
+    "name": "Barbell Suitcase Deadlift",
+    "musclesMain": [
+      "glutes",
+      "obliques"
+    ],
+    "musclesSecondary": [
+      "core",
+      "forearms"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "smith_deadlift",
+    "name": "Smith Machine Deadlift",
+    "musclesMain": [
+      "glutes",
+      "hamstrings"
+    ],
+    "musclesSecondary": [
+      "lower_back"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "machine_plate_row",
+    "name": "Machine Plate-Loaded Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "v_bar_seated_row_cable",
+    "name": "V-Bar Seated Cable Row",
+    "musclesMain": [
+      "back"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "forearms"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "db_rotational_row",
+    "name": "Dumbbell Rotational Row",
+    "musclesMain": [
+      "back",
+      "obliques"
+    ],
+    "musclesSecondary": [
+      "biceps",
+      "core"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "prone_w_raise",
+    "name": "Prone W Raise",
+    "musclesMain": [
+      "rear_delts",
+      "traps"
+    ],
+    "musclesSecondary": [
+      "upper_back"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
+    "id": "prone_t_raise",
+    "name": "Prone T Raise",
+    "musclesMain": [
+      "rear_delts",
+      "mid_traps"
+    ],
+    "musclesSecondary": [
+      "upper_back"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "pull"
+  },
+  {
     "id": "back_squat_bb",
     "name": "Barbell Back Squat",
     "musclesMain": [
@@ -3041,6 +3815,337 @@ export const exercises: Exercise[] = [
     "movement": "legs"
   },
   {
+    "id": "belt_squat",
+    "name": "Belt Squat",
+    "musclesMain": [
+      "quads",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "core"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "ssb_squat",
+    "name": "Safety Squat Bar Squat",
+    "musclesMain": [
+      "quads",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "upper_back",
+      "core"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "pause_back_squat",
+    "name": "Pause Back Squat",
+    "musclesMain": [
+      "quads",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "core",
+      "lower_back"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "anderson_squat",
+    "name": "Anderson Squat (Pin Squat)",
+    "musclesMain": [
+      "quads",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "core"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "split_squat_db",
+    "name": "Dumbbell Split Squat",
+    "musclesMain": [
+      "quads",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings",
+      "core"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "cossack_squat_db",
+    "name": "Cossack Squat",
+    "musclesMain": [
+      "adductors",
+      "quads"
+    ],
+    "musclesSecondary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "ghr_std",
+    "name": "Glute Ham Raise",
+    "musclesMain": [
+      "hamstrings",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "lower_back",
+      "calves"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "single_leg_rdl_db",
+    "name": "Single Leg Romanian Deadlift",
+    "musclesMain": [
+      "hamstrings",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "core"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "back_ext_45",
+    "name": "45 Degree Back Extension",
+    "musclesMain": [
+      "lower_back",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "jefferson_curl_db",
+    "name": "Jefferson Curl",
+    "musclesMain": [
+      "hamstrings",
+      "lower_back"
+    ],
+    "musclesSecondary": [
+      "core"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "single_leg_hip_thrust",
+    "name": "Single Leg Hip Thrust",
+    "musclesMain": [
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings",
+      "core"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "b_stance_hip_thrust_bb",
+    "name": "B-Stance Hip Thrust",
+    "musclesMain": [
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "frog_pump",
+    "name": "Frog Pump",
+    "musclesMain": [
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "kas_glute_bridge_bb",
+    "name": "Kas Glute Bridge",
+    "musclesMain": [
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "sled_push",
+    "name": "Sled Push / Prowler",
+    "musclesMain": [
+      "quads",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "calves",
+      "cardio"
+    ],
+    "equipment": [
+      "other"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "deficit_reverse_lunge_db",
+    "name": "Deficit Reverse Lunge",
+    "musclesMain": [
+      "quads",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "single_leg_calf_raise_db",
+    "name": "Single Leg Dumbbell Calf Raise",
+    "musclesMain": [
+      "calves"
+    ],
+    "musclesSecondary": [
+      "stability"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "machine_glute_kickback",
+    "name": "Machine Glute Kickback",
+    "musclesMain": [
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "single_leg_glute_bridge",
+    "name": "Single Leg Glute Bridge (Floor)",
+    "musclesMain": [
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "hamstrings",
+      "core"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "bw_standing_ham_curl",
+    "name": "Bodyweight Standing Hamstring Curl",
+    "musclesMain": [
+      "hamstrings"
+    ],
+    "musclesSecondary": [
+      "glutes"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "smith_rdl",
+    "name": "Smith Machine Romanian Deadlift",
+    "musclesMain": [
+      "hamstrings",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "lower_back"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "legs"
+  },
+  {
+    "id": "landmine_staggered_rdl",
+    "name": "Landmine Staggered Stance RDL",
+    "musclesMain": [
+      "hamstrings",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "core",
+      "lower_back"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "legs"
+  },
+  {
     "id": "plank_std",
     "name": "Standard Plank",
     "musclesMain": [
@@ -3618,6 +4723,318 @@ export const exercises: Exercise[] = [
     ],
     "equipment": [
       "machine"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "decline_sit_up_weighted",
+    "name": "Weighted Decline Sit-Up",
+    "musclesMain": [
+      "abs"
+    ],
+    "musclesSecondary": [
+      "hip_flexors"
+    ],
+    "equipment": [
+      "plate",
+      "dumbbell"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "cable_side_bend",
+    "name": "Cable Side Bend",
+    "musclesMain": [
+      "obliques"
+    ],
+    "musclesSecondary": [
+      "core"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "oblique_v_up",
+    "name": "Oblique V-Up",
+    "musclesMain": [
+      "obliques"
+    ],
+    "musclesSecondary": [
+      "abs"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "lying_leg_raise",
+    "name": "Lying Leg Raise",
+    "musclesMain": [
+      "lower_abs"
+    ],
+    "musclesSecondary": [
+      "hip_flexors"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "scissor_kicks",
+    "name": "Scissor Kicks",
+    "musclesMain": [
+      "lower_abs"
+    ],
+    "musclesSecondary": [
+      "hip_flexors",
+      "core"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "jackknife_std",
+    "name": "Jackknife",
+    "musclesMain": [
+      "abs"
+    ],
+    "musclesSecondary": [
+      "hip_flexors"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "body_saw_plank",
+    "name": "Body Saw Plank",
+    "musclesMain": [
+      "abs",
+      "core"
+    ],
+    "musclesSecondary": [
+      "shoulders"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "stir_the_pot_sb",
+    "name": "Stir the Pot (Stability Ball)",
+    "musclesMain": [
+      "core",
+      "abs"
+    ],
+    "musclesSecondary": [
+      "shoulders"
+    ],
+    "equipment": [
+      "other"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "sb_pike",
+    "name": "Stability Ball Pike",
+    "musclesMain": [
+      "abs",
+      "core"
+    ],
+    "musclesSecondary": [
+      "shoulders"
+    ],
+    "equipment": [
+      "other"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "sb_rollout",
+    "name": "Stability Ball Rollout",
+    "musclesMain": [
+      "abs",
+      "core"
+    ],
+    "musclesSecondary": [
+      "lats",
+      "shoulders"
+    ],
+    "equipment": [
+      "other"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "plank_to_push_up",
+    "name": "Plank to Push-Up",
+    "musclesMain": [
+      "core",
+      "abs"
+    ],
+    "musclesSecondary": [
+      "shoulders",
+      "triceps"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "reverse_plank_std",
+    "name": "Reverse Plank",
+    "musclesMain": [
+      "core",
+      "glutes"
+    ],
+    "musclesSecondary": [
+      "shoulders",
+      "hamstrings"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "standing_cable_crunch",
+    "name": "Standing Cable Crunch",
+    "musclesMain": [
+      "abs"
+    ],
+    "musclesSecondary": [
+      "core"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "med_ball_slam",
+    "name": "Medicine Ball Slam",
+    "musclesMain": [
+      "abs",
+      "core"
+    ],
+    "musclesSecondary": [
+      "shoulders",
+      "lats"
+    ],
+    "equipment": [
+      "other"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "med_ball_rotational_throw",
+    "name": "Medicine Ball Rotational Throw",
+    "musclesMain": [
+      "obliques",
+      "core"
+    ],
+    "musclesSecondary": [
+      "shoulders"
+    ],
+    "equipment": [
+      "other"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "weighted_plank",
+    "name": "Weighted Plank",
+    "musclesMain": [
+      "abs",
+      "core"
+    ],
+    "musclesSecondary": [
+      "shoulders"
+    ],
+    "equipment": [
+      "bodyweight",
+      "plate"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "bb_ab_rollout",
+    "name": "Barbell Ab Rollout",
+    "musclesMain": [
+      "abs"
+    ],
+    "musclesSecondary": [
+      "core",
+      "lats"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "ab_coaster_machine",
+    "name": "Ab Coaster Machine",
+    "musclesMain": [
+      "abs"
+    ],
+    "musclesSecondary": [
+      "obliques"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "cable_std_russian_twist",
+    "name": "Cable Standing Russian Twist",
+    "musclesMain": [
+      "obliques"
+    ],
+    "musclesSecondary": [
+      "abs",
+      "core"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "kb_side_bend",
+    "name": "Kettlebell Side Bend",
+    "musclesMain": [
+      "obliques"
+    ],
+    "musclesSecondary": [
+      "core"
+    ],
+    "equipment": [
+      "kettlebell"
+    ],
+    "movement": "core"
+  },
+  {
+    "id": "db_v_sit",
+    "name": "Dumbbell V-Sit",
+    "musclesMain": [
+      "abs"
+    ],
+    "musclesSecondary": [
+      "hip_flexors"
+    ],
+    "equipment": [
+      "dumbbell"
     ],
     "movement": "core"
   }

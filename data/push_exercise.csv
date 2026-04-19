@@ -87,3 +87,29 @@ smith_shoulder_press,Smith Machine Shoulder Press,"['shoulders']","['triceps']",
 smith_incline_press,Smith Machine Incline Press,"['upper_chest']","['triceps']","['machine']",push
 machine_tricep_ext,Machine Tricep Extension,"['triceps']","","['machine']",push
 wall_slide_serratus,Serratus Wall Slide,"['serratus_anterior']","['shoulders']","['bodyweight']",push
+cable_crossover_std,Standing Cable Crossover,"['chest']","['shoulders']","['cable']",push
+neutral_grip_db_press,Neutral Grip Dumbbell Bench Press,"['chest']","['triceps', 'shoulders']","['dumbbell']",push
+board_press_bb,Board Press,"['chest']","['triceps']","['barbell']",push
+larsen_press_bb,Larsen Press,"['chest']","['triceps', 'shoulders']","['barbell']",push
+guillotine_press_bb,Guillotine Press,"['upper_chest']","['shoulders', 'triceps']","['barbell']",push
+cable_chest_press_std,Standing Cable Chest Press,"['chest']","['triceps', 'shoulders']","['cable']",push
+z_press_bb,Barbell Z Press,"['shoulders']","['core', 'triceps']","['barbell']",push
+z_press_db,Dumbbell Z Press,"['shoulders']","['core', 'triceps']","['dumbbell']",push
+bradford_press_bb,Bradford Press,"['shoulders']","['triceps']","['barbell']",push
+behind_neck_press_bb,Behind the Neck Press,"['shoulders']","['traps', 'triceps']","['barbell']",push
+viking_press_landmine,Landmine Viking Press,"['shoulders']","['triceps', 'core']","['barbell']",push
+half_kneeling_landmine_press,Half-Kneeling Landmine Press,"['shoulders']","['core', 'triceps']","['barbell']",push
+cable_front_raise,Cable Front Raise,"['shoulders']","['upper_chest']","['cable']",push
+cable_upright_row,Cable Upright Row,"['traps', 'shoulders']","['biceps']","['cable']",push
+tate_press_db,Tate Press,"['triceps']","['chest']","['dumbbell']",push
+california_press_db,California Press,"['triceps']","['chest', 'shoulders']","['dumbbell']",push
+rolling_tricep_ext_db,Rolling Dumbbell Tricep Extension,"['triceps']","['shoulders']","['dumbbell']",push
+ring_dips,Ring Dips,"['chest', 'triceps']","['shoulders', 'stability']","['bodyweight']",push
+ez_bar_shoulder_press,EZ-Bar Shoulder Press,"['shoulders']","['triceps']","['barbell']",push
+reverse_grip_ohp_bb,Reverse Grip Barbell Shoulder Press,"['shoulders', 'upper_chest']","['triceps']","['barbell']",push
+wide_grip_bench_bb,Wide Grip Barbell Bench Press,"['chest']","['shoulders', 'triceps']","['barbell']",push
+reverse_grip_bench_db,Reverse Grip Dumbbell Bench Press,"['upper_chest']","['triceps']","['dumbbell']",push
+single_arm_shoulder_press_db,Single Arm Dumbbell Shoulder Press,"['shoulders']","['triceps', 'core']","['dumbbell']",push
+cable_cross_body_tricep_ext,Cable Cross-Body Tricep Extension,"['triceps']","","['cable']",push
+db_cross_body_oh_tricep_ext,Dumbbell Cross-Body Overhead Tricep Extension,"['triceps']","","['dumbbell']",push
+prone_db_shoulder_press,Prone Dumbbell Shoulder Press,"['rear_delts', 'upper_back']","['traps']","['dumbbell']",push

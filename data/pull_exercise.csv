@@ -71,3 +71,30 @@ dead_hang,Dead Hang,"['forearms']","['back', 'shoulders']","['bodyweight']",pull
 atlas_stones,Atlas Stones,"['back', 'glutes']","['forearms', 'lower_back']","['other']",pull
 tire_flip,Tire Flip,"['glutes', 'back']","['legs', 'shoulders']","['other']",pull
 rope_climb,Rope Climb,"['back', 'biceps']","['core', 'legs', 'forearms']","['other']",pull
+chest_supported_row_machine,Chest Supported Machine Row,"['back']","['biceps', 'rear_delts']","['machine']",pull
+chest_supported_row_db,Chest Supported Dumbbell Row,"['back']","['biceps', 'rear_delts']","['dumbbell']",pull
+yates_row_bb,Yates Row (Underhand Bent Over),"['back', 'biceps']","['forearms']","['barbell']",pull
+hs_high_row,Hammer Strength High Row,"['back']","['biceps', 'rear_delts']","['machine']",pull
+hs_low_row,Hammer Strength Low Row,"['back']","['biceps']","['machine']",pull
+landmine_row_single,Single Arm Landmine Row,"['back']","['biceps', 'core']","['barbell']",pull
+smith_row,Smith Machine Bent Over Row,"['back']","['biceps']","['machine']",pull
+neutral_grip_pulldown,Neutral Grip Lat Pulldown,"['back']","['biceps', 'brachialis']","['machine']",pull
+close_grip_pulldown,Close Grip Lat Pulldown,"['back']","['biceps']","['machine']",pull
+commando_pull_up,Commando Pull-Up,"['back']","['biceps', 'core']","['bodyweight']",pull
+drag_curl_bb,Drag Curl,"['biceps']","['forearms']","['barbell']",pull
+waiter_curl_db,Waiter Curl,"['biceps']","['forearms']","['dumbbell']",pull
+plate_curl_std,Plate Curl,"['biceps', 'forearms']","","['plate']",pull
+rope_hammer_curl_cable,Cable Rope Hammer Curl,"['biceps', 'forearms']","['brachialis']","['cable']",pull
+seated_db_curl,Seated Dumbbell Curl,"['biceps']","['forearms']","['dumbbell']",pull
+cable_reverse_fly,Cable Reverse Fly,"['rear_delts']","['upper_back']","['cable']",pull
+prone_y_raise,Prone Y Raise,"['rear_delts', 'traps']","['upper_back']","['dumbbell']",pull
+reverse_wrist_curl_bb,Reverse Barbell Wrist Curl,"['forearms']","","['barbell']",pull
+zercher_deadlift_bb,Barbell Zercher Deadlift,"['glutes', 'quads']","['upper_back', 'core']","['barbell']",pull
+deadlift_db,Dumbbell Deadlift,"['glutes', 'hamstrings']","['lower_back', 'forearms']","['dumbbell']",pull
+suitcase_deadlift_bb,Barbell Suitcase Deadlift,"['glutes', 'obliques']","['core', 'forearms']","['barbell']",pull
+smith_deadlift,Smith Machine Deadlift,"['glutes', 'hamstrings']","['lower_back']","['machine']",pull
+machine_plate_row,Machine Plate-Loaded Row,"['back']","['biceps', 'rear_delts']","['machine']",pull
+v_bar_seated_row_cable,V-Bar Seated Cable Row,"['back']","['biceps', 'forearms']","['cable']",pull
+db_rotational_row,Dumbbell Rotational Row,"['back', 'obliques']","['biceps', 'core']","['dumbbell']",pull
+prone_w_raise,Prone W Raise,"['rear_delts', 'traps']","['upper_back']","['dumbbell']",pull
+prone_t_raise,Prone T Raise,"['rear_delts', 'mid_traps']","['upper_back']","['dumbbell']",pull
